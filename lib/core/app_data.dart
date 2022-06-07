@@ -62,7 +62,7 @@ class AppData {
         rating: 3,
         type: ProductType.tablet),
     Product(
-        name: 'Samsung Galaxy Watch4',
+        name: 'Samsung Galaxy Watch 4',
         price: 229,
         about:
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
@@ -83,7 +83,7 @@ class AppData {
         ]),
         type: ProductType.watch),
     Product(
-        name: 'Apple Watch Series 7',
+        name: 'Apple Watch 7',
         price: 330,
         about:
             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',

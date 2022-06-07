@@ -69,6 +69,8 @@ class ProductGridView extends StatelessWidget {
                         FittedBox(
                           child: Text(
                             product.name,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                             style: const TextStyle(
                                 fontWeight: FontWeight.w500,
                                 color: Colors.grey),

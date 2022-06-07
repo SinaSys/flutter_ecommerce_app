@@ -69,7 +69,9 @@ class CartScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
-                                    product.name,
+                                    product.name.nextLine,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 15),
@@ -98,15 +100,13 @@ class CartScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10)),
                               child: Row(
                                 children: [
-                                  FittedBox(
-                                    child: IconButton(
-                                      splashRadius: 10.0,
-                                      onPressed: () =>
-                                          controller.decreaseItem(index),
-                                      icon: const Icon(
-                                        Icons.remove,
-                                        color: Color(0xFFEC6813),
-                                      ),
+                                  IconButton(
+                                    splashRadius: 10.0,
+                                    onPressed: () =>
+                                        controller.decreaseItem(index),
+                                    icon: const Icon(
+                                      Icons.remove,
+                                      color: Color(0xFFEC6813),
                                     ),
                                   ),
                                   GetBuilder<ProductController>(
@@ -123,15 +123,13 @@ class CartScreen extends StatelessWidget {
                                       );
                                     },
                                   ),
-                                  FittedBox(
-                                    child: IconButton(
-                                      splashRadius: 10.0,
-                                      onPressed: () =>
-                                          controller.increaseItem(index),
-                                      icon: const Icon(
-                                        Icons.add,
-                                        color: Color(0xFFEC6813),
-                                      ),
+                                  IconButton(
+                                    splashRadius: 10.0,
+                                    onPressed: () =>
+                                        controller.increaseItem(index),
+                                    icon: const Icon(
+                                      Icons.add,
+                                      color: Color(0xFFEC6813),
                                     ),
                                   ),
                                 ],

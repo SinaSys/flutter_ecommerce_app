@@ -23,3 +23,13 @@ extension IterableExtension<T> on Iterable<T> {
     return result;
   }
 }
+
+extension StringExtension on String {
+  String get nextLine {
+    if (length < 15) {
+      return this;
+    } else {
+      return "${substring(0, 15)} \n${substring(15,length)}";
+    }
+  }
+}
