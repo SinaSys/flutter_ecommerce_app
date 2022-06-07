@@ -10,6 +10,8 @@ import '../src/model/categorical.dart';
 import '../src/model/numerical.dart';
 
 class AppData {
+  const AppData._();
+
   static List<Product> products = [
     Product(
         name: 'Samsung Galaxy A53 5G',

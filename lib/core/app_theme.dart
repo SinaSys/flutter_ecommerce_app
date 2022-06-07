@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  const AppTheme();
+  const AppTheme._();
 
   static ThemeData lightAppTheme = ThemeData(
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -28,8 +28,6 @@ class AppTheme {
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true
-
-
     )
   );
 }
