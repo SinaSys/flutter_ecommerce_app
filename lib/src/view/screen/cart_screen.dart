@@ -1,4 +1,5 @@
 import 'package:e_commerce_flutter/core/extensions.dart';
+import 'package:e_commerce_flutter/src/view/widget/animated_switcher_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/product_controller.dart';
@@ -34,7 +35,6 @@ class CartScreen extends StatelessWidget {
                       return Container(
                         margin: const EdgeInsets.only(bottom: 20),
                         padding: const EdgeInsets.all(15),
-                        width: 150,
                         height: 120,
                         decoration: BoxDecoration(
                             color: Colors.grey[200]?.withOpacity(0.6),
@@ -111,20 +111,29 @@ class CartScreen extends StatelessWidget {
                                   ),
                                   GetBuilder<ProductController>(
                                     builder: (ProductController controller) {
-                                      return Text(
-                                        '${controller.cartProducts[index].quantity}',
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.w900),
+                                      return AnimatedSwitcherWrapper(
+                                        child: Text(
+                                          '${controller.cartProducts[index].quantity}',
+                                          key: ValueKey<int>(controller
+                                              .cartProducts[index].quantity),
+                                          style: const TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.w700),
+                                        ),
                                       );
                                     },
                                   ),
                                   FittedBox(
-                                      child: IconButton(
-                                          splashRadius: 10.0,
-                                          onPressed: () =>
-                                              controller.increaseItem(index),
-                                          icon: const Icon(Icons.add,
-                                              color: Color(0xFFEC6813)))),
+                                    child: IconButton(
+                                      splashRadius: 10.0,
+                                      onPressed: () =>
+                                          controller.increaseItem(index),
+                                      icon: const Icon(
+                                        Icons.add,
+                                        color: Color(0xFFEC6813),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             )
@@ -146,12 +155,15 @@ class CartScreen extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.w400)),
                   Obx(() {
-                    return Text(
-                      "\$${controller.totalPrice.value}",
-                      style: const TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w900,
-                        color: Color(0xFFEC6813),
+                    return AnimatedSwitcherWrapper(
+                      child: Text(
+                        "\$${controller.totalPrice.value}",
+                        key: ValueKey<int>(controller.totalPrice.value),
+                          style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xFFEC6813),
+                        ),
                       ),
                     );
                   })
