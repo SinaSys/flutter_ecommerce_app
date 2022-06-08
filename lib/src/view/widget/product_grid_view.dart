@@ -114,28 +114,25 @@ class ProductGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () {
-        return SizedBox(
-          height: 400,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: GridView.builder(
-              itemCount: controller.filteredProducts.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 10 / 16,
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10),
-              itemBuilder: (_, index) {
-                Product product = controller.filteredProducts[index];
-                return OpenContainerWrapper(
-                    child: GridTile(
-                      header: _gridItemHeader(product, index),
-                      footer: _gridItemFooter(product, context),
-                      child: _gridItemBody(product),
-                    ),
-                    product: product);
-              },
-            ),
+        return Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: GridView.builder(
+            itemCount: controller.filteredProducts.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                childAspectRatio: 10 / 16,
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10),
+            itemBuilder: (_, index) {
+              Product product = controller.filteredProducts[index];
+              return OpenContainerWrapper(
+                  child: GridTile(
+                    header: _gridItemHeader(product, index),
+                    footer: _gridItemFooter(product, context),
+                    child: _gridItemBody(product),
+                  ),
+                  product: product);
+            },
           ),
         );
       },

@@ -219,7 +219,9 @@ class AllProductScreen extends StatelessWidget {
                 _recommendedProductListView(context),
                 _topCategoriesHeader(context),
                 _topCategoriesListView(),
-                const ProductGridView()
+                const SizedBox(
+                  height: 400,
+                    child: ProductGridView())
               ],
             ),
           ),
