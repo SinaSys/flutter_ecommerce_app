@@ -136,7 +136,7 @@ class AppData {
           Numerical('50', false),
           Numerical('55', false)
         ]),
-        type: ProductType.TV),
+        type: ProductType.tv),
     Product(
         name: 'Sony x 80 J',
         price: 498,
@@ -156,7 +156,7 @@ class AppData {
           Numerical('85', false)
         ]),
         rating: 2,
-        type: ProductType.TV),
+        type: ProductType.tv),
   ];
 
   static List<ProductCategory> categories = [
@@ -166,7 +166,7 @@ class AppData {
     ProductCategory(ProductType.watch, false, Icons.watch),
     ProductCategory(ProductType.tablet, false, FontAwesomeIcons.tablet),
     ProductCategory(ProductType.headphone, false, Icons.headphones),
-    ProductCategory(ProductType.TV, false, Icons.tv),
+    ProductCategory(ProductType.tv, false, Icons.tv),
   ];
 
   static List<Color> randomColors = [
