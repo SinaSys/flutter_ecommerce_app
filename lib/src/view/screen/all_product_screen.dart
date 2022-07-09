@@ -164,7 +164,8 @@ class AllProductScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 5),
             child: GetBuilder<ProductController>(
               builder: (ProductController controller) {
-                return Container(
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
                   width: 50,
                   height: 100,
                   decoration: BoxDecoration(
@@ -176,6 +177,7 @@ class AllProductScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: IconButton(
+                    splashRadius: 0.1,
                     icon: FaIcon(controller.categories[index].icon,
                         color: controller
                             .categories[index].isSelected ==
