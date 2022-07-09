@@ -1,5 +1,11 @@
 ## flutter_ecommerce_app
 
+<p align="center">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_ecommerce_app/Build%20and%20Release?label=CI&logo=github">
+  <img src="https://img.shields.io/github/v/release/SinaSys/flutter_ecommerce_app?label=Release&logo=semantic-release">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_ecommerce_app?label=Last%20commit">
+</p>
+
 E-Commerce app is a design implementation of [E-commerce App](https://dribbble.com/shots/15550702-E-commerce-Mobile-App) designed by [Billah](https://dribbble.com/designermasum)
 
 ![](https://github.com/SinaSys/flutter_ecommerce_app/blob/master/screenshots/screenshot.png?raw=true)
