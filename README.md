@@ -72,3 +72,12 @@ Package Name        |
 ## Created & Maintained By
 
 [SinaSys](https://github.com/SinaSys) 
+
+
+## My other flutter projects
+project        |
+:-------------------------|
+|[Office furniture store app](https://github.com/SinaSys/flutter_office_furniture_store_app)
+|[Japanese restaurant app](https://github.com/SinaSys/flutter_japanese_restaurant_app)
+
+
