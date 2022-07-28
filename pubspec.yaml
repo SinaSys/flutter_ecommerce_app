@@ -35,12 +35,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   enum_to_string: ^2.0.1
-  get: ^4.6.1
+  get: ^4.6.5
   bottom_navy_bar: ^6.0.0
   smooth_page_indicator: ^1.0.0+2
   flutter_rating_bar: ^4.0.0
   font_awesome_flutter: ^10.1.0
-  animations: ^2.0.2
+  animations: ^2.0.3
 
 dev_dependencies:
   flutter_lints: ^1.0.4
