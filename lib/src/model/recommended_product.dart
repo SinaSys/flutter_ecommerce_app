@@ -8,9 +8,8 @@ class RecommendedProduct {
   String? imagePath;
 
   RecommendedProduct(
-      {
-        this.cardBackgroundColor,
-        this.buttonTextColor = AppColor.darkOrange,
-        this.buttonBackgroundColor = Colors.white,
-        this.imagePath});
+      {this.cardBackgroundColor,
+      this.buttonTextColor = AppColor.darkOrange,
+      this.buttonBackgroundColor = Colors.white,
+      this.imagePath});
 }

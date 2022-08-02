@@ -40,14 +40,14 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
-      body: Obx((){
+      body: Obx(() {
         return PageTransitionSwitcher(
           duration: const Duration(seconds: 1),
           transitionBuilder: (
-              Widget child,
-              Animation<double> animation,
-              Animation<double> secondaryAnimation,
-              ) {
+            Widget child,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) {
             return FadeThroughTransition(
               animation: animation,
               secondaryAnimation: secondaryAnimation,

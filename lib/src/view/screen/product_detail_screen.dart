@@ -15,7 +15,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   ProductDetailScreen(this.product, {Key? key}) : super(key: key);
 
-  PreferredSizeWidget _appBar(BuildContext context){
+  PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -32,8 +32,8 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget productPageView(double width,double height){
-    return  Container(
+  Widget productPageView(double width, double height) {
+    return Container(
       height: height * 0.42,
       width: width,
       decoration: const BoxDecoration(
@@ -63,13 +63,11 @@ class ProductDetailScreen extends StatelessWidget {
             ),
           ),
           Obx(
-                () => SmoothIndicator(
+            () => SmoothIndicator(
                 effect: const WormEffect(
                     dotColor: Colors.white,
                     activeDotColor: AppColor.darkOrange),
-                // ),
-                offset: controller.productImageDefaultIndex.value
-                    .toDouble(),
+                offset: controller.productImageDefaultIndex.value.toDouble(),
                 count: product.images.length),
           )
         ],
@@ -77,15 +75,14 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _ratingBar(BuildContext context){
-    return    Row(
+  Widget _ratingBar(BuildContext context) {
+    return Row(
       children: [
         RatingBar.builder(
             initialRating: product.rating,
             direction: Axis.horizontal,
             itemBuilder: (_, index) {
-              return const Icon(Icons.star,
-                  color: Colors.amber);
+              return const Icon(Icons.star, color: Colors.amber);
             },
             onRatingUpdate: (rating) {}),
         const SizedBox(width: 30),
@@ -100,40 +97,31 @@ class ProductDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget productSizesListView(){
+  Widget productSizesListView() {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: controller.sizeType(product).length,
       itemBuilder: (_, index) {
         return InkWell(
           onTap: () {
-            controller.switchBetweenProductSizes(
-                product, index);
+            controller.switchBetweenProductSizes(product, index);
           },
           child: Container(
-            margin:
-            const EdgeInsets.only(right: 5, left: 5),
+            margin: const EdgeInsets.only(right: 5, left: 5),
             alignment: Alignment.center,
-            width:
-            controller.isNominal(product) ? 40 : 70,
+            width: controller.isNominal(product) ? 40 : 70,
             decoration: BoxDecoration(
-                color: controller
-                    .sizeType(product)[index]
-                    .isSelected ==
-                    false
+                color: controller.sizeType(product)[index].isSelected == false
                     ? Colors.white
                     : AppColor.lightOrange,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey,width: 0.4)),
+                border: Border.all(color: Colors.grey, width: 0.4)),
             child: FittedBox(
               child: Text(
                 //Map<String,bool>
-                controller
-                    .sizeType(product)[index]
-                    .numerical,
-                style: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15),
+                controller.sizeType(product)[index].numerical,
+                style:
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
               ),
             ),
           ),
@@ -154,7 +142,7 @@ class ProductDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              productPageView(width,height),
+              productPageView(width, height),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(20),
@@ -176,7 +164,6 @@ class ProductDetailScreen extends StatelessWidget {
                               : "\$${product.price}",
                           //   style: const TextStyle(
                           style: Theme.of(context).textTheme.headline1,
-
                         ),
                         const SizedBox(width: 3),
                         Visibility(
@@ -200,14 +187,13 @@ class ProductDetailScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 30),
-                     Text(
+                    Text(
                       "About",
                       style: Theme.of(context).textTheme.headline4,
-
                     ),
-                   const SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(product.about),
-                   const SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     SizedBox(
                       height: 40,
                       child: GetBuilder<ProductController>(
@@ -216,7 +202,7 @@ class ProductDetailScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                   const SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(

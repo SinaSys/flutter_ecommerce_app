@@ -22,9 +22,10 @@ class ProfileScreen extends StatelessWidget {
                 width: 60,
               ),
               const SizedBox(width: 10),
-              const Text("https://github.com/SinaSys",style: TextStyle(
-                fontSize: 20
-              ),)
+              const Text(
+                "https://github.com/SinaSys",
+                style: TextStyle(fontSize: 20),
+              )
             ],
           )
         ],

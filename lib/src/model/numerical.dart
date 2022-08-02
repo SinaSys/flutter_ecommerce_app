@@ -1,4 +1,4 @@
-class Numerical{
+class Numerical {
   String numerical;
   bool isSelected = false;
 

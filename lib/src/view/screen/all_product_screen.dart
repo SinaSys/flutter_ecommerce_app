@@ -11,7 +11,7 @@ final ProductController controller = Get.put(ProductController());
 class AllProductScreen extends StatelessWidget {
   const AllProductScreen({Key? key}) : super(key: key);
 
-  PreferredSize _appBar(){
+  PreferredSize _appBar() {
     return PreferredSize(
       preferredSize: const Size.fromHeight(100),
       child: SafeArea(
@@ -29,8 +29,7 @@ class AllProductScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   constraints: const BoxConstraints(),
                   onPressed: () {},
-                  icon:
-                  const Icon(Icons.ac_unit_outlined, color: Colors.black),
+                  icon: const Icon(Icons.ac_unit_outlined, color: Colors.black),
                 ),
               ),
               Container(
@@ -52,8 +51,8 @@ class AllProductScreen extends StatelessWidget {
     );
   }
 
-  Widget _recommendedProductListView(BuildContext context){
-    return  SizedBox(
+  Widget _recommendedProductListView(BuildContext context) {
+    return SizedBox(
       height: 170,
       child: ListView.builder(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -66,8 +65,7 @@ class AllProductScreen extends StatelessWidget {
               child: Container(
                 width: 300,
                 decoration: BoxDecoration(
-                  color: AppData.recommendedProducts[index]
-                      .cardBackgroundColor,
+                  color: AppData.recommendedProducts[index].cardBackgroundColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Row(
@@ -75,10 +73,8 @@ class AllProductScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Column(
-                        crossAxisAlignment:
-                        CrossAxisAlignment.start,
-                        mainAxisAlignment:
-                        MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             '30% OFF DURING \nCOVID 19',
@@ -91,22 +87,19 @@ class AllProductScreen extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              primary: AppData
-                                  .recommendedProducts[index]
+                              primary: AppData.recommendedProducts[index]
                                   .buttonBackgroundColor,
                               elevation: 0,
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 18),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 18),
                               shape: RoundedRectangleBorder(
-                                borderRadius:
-                                BorderRadius.circular(18),
+                                borderRadius: BorderRadius.circular(18),
                               ),
                             ),
                             child: Text(
                               "Get Now",
                               style: TextStyle(
-                                  color: AppData
-                                      .recommendedProducts[index]
+                                  color: AppData.recommendedProducts[index]
                                       .buttonTextColor!),
                             ),
                           )
@@ -127,7 +120,7 @@ class AllProductScreen extends StatelessWidget {
     );
   }
 
-  Widget _topCategoriesHeader(BuildContext context){
+  Widget _topCategoriesHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: Row(
@@ -153,7 +146,7 @@ class AllProductScreen extends StatelessWidget {
     );
   }
 
-  Widget _topCategoriesListView(){
+  Widget _topCategoriesListView() {
     return SizedBox(
       height: 50,
       child: ListView.builder(
@@ -169,9 +162,7 @@ class AllProductScreen extends StatelessWidget {
                   width: 50,
                   height: 100,
                   decoration: BoxDecoration(
-                    color:
-                    controller.categories[index].isSelected ==
-                        false
+                    color: controller.categories[index].isSelected == false
                         ? const Color(0xFFE5E6E8)
                         : const Color(0xFFf16b26),
                     borderRadius: BorderRadius.circular(10),
@@ -179,14 +170,10 @@ class AllProductScreen extends StatelessWidget {
                   child: IconButton(
                     splashRadius: 0.1,
                     icon: FaIcon(controller.categories[index].icon,
-                        color: controller
-                            .categories[index].isSelected ==
-                            false
+                        color: controller.categories[index].isSelected == false
                             ? const Color(0xFFA6A3A0)
                             : Colors.white),
-                    //  onPressed: controller.filterItemsByCategory,
-                    onPressed: () =>
-                        controller.filterItemsByCategory(index),
+                    onPressed: () => controller.filterItemsByCategory(index),
                   ),
                 );
               },
@@ -196,7 +183,6 @@ class AllProductScreen extends StatelessWidget {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -221,9 +207,7 @@ class AllProductScreen extends StatelessWidget {
                 _recommendedProductListView(context),
                 _topCategoriesHeader(context),
                 _topCategoriesListView(),
-                const SizedBox(
-                  height: 400,
-                    child: ProductGridView())
+                const SizedBox(height: 400, child: ProductGridView())
               ],
             ),
           ),

@@ -8,10 +8,10 @@ class EmptyCart extends StatelessWidget {
     return Column(
       children: [
         Image.asset('assets/images/empty_cart.png'),
-        const Text("Empty cart",style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20
-        ),)
+        const Text(
+          "Empty cart",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        )
       ],
     );
   }

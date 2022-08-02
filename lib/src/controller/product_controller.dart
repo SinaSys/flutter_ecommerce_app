@@ -51,7 +51,6 @@ class ProductController extends GetxController {
     Product product = cartProducts[index];
     product.quantity++;
     calculateTotalPrice();
-   // cartProducts.refresh();
     update();
   }
 
@@ -93,9 +92,7 @@ class ProductController extends GetxController {
       product.quantity--;
     }
     calculateTotalPrice();
-   // cartProducts.refresh();
     update();
-
   }
 
   void calculateTotalPrice() {
@@ -117,7 +114,7 @@ class ProductController extends GetxController {
       getLikedItems();
     }
     if (index == 2) {
-      cartProducts.assignAll(allProducts.where((item) => item.quantity>0));
+      cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
     }
 
     currentBottomNavItemIndex.value = index;

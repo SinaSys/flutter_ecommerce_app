@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'app_data.dart';
 
-
 extension ColorExtension on Color {
   static Color get randomColor {
     Random random = Random();
@@ -10,7 +9,6 @@ extension ColorExtension on Color {
     return AppData.randomColors[randNumber];
   }
 }
-
 
 extension IterableExtension<T> on Iterable<T> {
   Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
@@ -29,7 +27,7 @@ extension StringExtension on String {
     if (length < 15) {
       return this;
     } else {
-      return "${substring(0, 15)} \n${substring(15,length)}";
+      return "${substring(0, 15)} \n${substring(15, length)}";
     }
   }
 }
