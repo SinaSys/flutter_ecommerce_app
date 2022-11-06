@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "687699391365",
+    "project_id": "ecomfaza1",
+    "storage_bucket": "ecomfaza1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687699391365:android:20c9dcff63b46bae65caec",
+        "android_client_info": {
+          "package_name": "com.sinasys.e_commerce_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687699391365-ue1v1deia81012108rsrnvr90c91b0qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4ykLMMAI9HTGy6yby7sJ2Pfc6vn3G1gk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687699391365-ue1v1deia81012108rsrnvr90c91b0qg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "687699391365-mbqqml5uvdm3bdjpbci2ur9eh2dl94qp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sinasys.eCommerceFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
