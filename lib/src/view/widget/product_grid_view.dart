@@ -7,20 +7,6 @@ import 'open_container_wrapper.dart';
 class ProductGridView extends StatelessWidget {
   const ProductGridView({Key? key}) : super(key: key);
 
-  Widget _gridItemBody(Product product) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        color: const Color(0xFFE5E6E8),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Image.asset(
-        product.images[0],
-        scale: 3,
-      ),
-    );
-  }
-
   Widget _gridItemHeader(Product product, int index) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
@@ -52,6 +38,17 @@ class ProductGridView extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _gridItemBody(Product product) {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: const Color(0xFFE5E6E8),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Image.asset(product.images[0], scale: 3),
     );
   }
 
@@ -126,12 +123,13 @@ class ProductGridView extends StatelessWidget {
             itemBuilder: (_, index) {
               Product product = controller.filteredProducts[index];
               return OpenContainerWrapper(
-                  child: GridTile(
-                    header: _gridItemHeader(product, index),
-                    footer: _gridItemFooter(product, context),
-                    child: _gridItemBody(product),
-                  ),
-                  product: product);
+                child: GridTile(
+                  header: _gridItemHeader(product, index),
+                  footer: _gridItemFooter(product, context),
+                  child: _gridItemBody(product),
+                ),
+                product: product,
+              );
             },
           ),
         );

@@ -23,7 +23,6 @@ class ProductController extends GetxController {
       element.isSelected = false;
     }
     categories[index].isSelected = true;
-    update();
 
     if (categories[index].type == ProductType.all) {
       filteredProducts.assignAll(allProducts);
@@ -32,7 +31,6 @@ class ProductController extends GetxController {
         return item.type == categories[index].type;
       }).toList());
     }
-    filteredProducts.refresh();
   }
 
   void isLiked(int index) {
@@ -107,16 +105,16 @@ class ProductController extends GetxController {
   }
 
   void switchBetweenBottomNavigationItems(int index) {
-    if (index == 0) {
-      filteredProducts.assignAll(allProducts);
+    switch (index) {
+      case 0:
+        filteredProducts.assignAll(allProducts);
+        break;
+      case 1:
+        getLikedItems();
+        break;
+      case 2:
+        cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
     }
-    if (index == 1) {
-      getLikedItems();
-    }
-    if (index == 2) {
-      cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
-    }
-
     currentBottomNavItemIndex.value = index;
   }
 

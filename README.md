@@ -47,6 +47,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    │───📂widget
      |    |   |──animated_switcher_wrapper.dart
      |    |   |──product_grid_view.dart
+     |    |   |──list_item_selector.dart
      │    |   |──empty_cart.dart
      |    |   └──open_container_wrapper.dart
      └────📂controller

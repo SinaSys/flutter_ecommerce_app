@@ -1,17 +1,39 @@
 import 'package:e_commerce_flutter/core/app_color.dart';
+import 'package:e_commerce_flutter/src/view/widget/list_item_selector.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import '../../../core/app_data.dart';
 import '../../controller/product_controller.dart';
 import '../widget/product_grid_view.dart';
+
+enum AppbarActionType { leading, trailing }
 
 final ProductController controller = Get.put(ProductController());
 
 class AllProductScreen extends StatelessWidget {
   const AllProductScreen({Key? key}) : super(key: key);
 
-  PreferredSize _appBar() {
+  Widget appBarActionButton(AppbarActionType type) {
+    IconData icon = Icons.ac_unit_outlined;
+
+    if (type == AppbarActionType.trailing) {
+      icon = Icons.search;
+    }
+
+    return Container(
+      margin: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: AppColor.lightGrey),
+      child: IconButton(
+        padding: const EdgeInsets.all(8),
+        constraints: const BoxConstraints(),
+        onPressed: () {},
+        icon: Icon(icon, color: Colors.black),
+      ),
+    );
+  }
+
+  PreferredSize get _appBar {
     return PreferredSize(
       preferredSize: const Size.fromHeight(100),
       child: SafeArea(
@@ -20,30 +42,8 @@ class AllProductScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: AppColor.lightGrey),
-                child: IconButton(
-                  padding: const EdgeInsets.all(8),
-                  constraints: const BoxConstraints(),
-                  onPressed: () {},
-                  icon: const Icon(Icons.ac_unit_outlined, color: Colors.black),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: AppColor.lightGrey),
-                child: IconButton(
-                  padding: const EdgeInsets.all(8),
-                  constraints: const BoxConstraints(),
-                  onPressed: () {},
-                  icon: const Icon(Icons.search, color: Colors.black),
-                ),
-              )
+              appBarActionButton(AppbarActionType.leading),
+              appBarActionButton(AppbarActionType.trailing),
             ],
           ),
         ),
@@ -87,7 +87,8 @@ class AllProductScreen extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              primary: AppData.recommendedProducts[index]
+                              backgroundColor: AppData
+                                  .recommendedProducts[index]
                                   .buttonBackgroundColor,
                               elevation: 0,
                               padding:
@@ -132,7 +133,7 @@ class AllProductScreen extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {},
-            style: TextButton.styleFrom(primary: AppColor.darkOrange),
+            style: TextButton.styleFrom(foregroundColor: AppColor.darkOrange),
             child: Text(
               "SEE ALL",
               style: Theme.of(context)
@@ -147,40 +148,11 @@ class AllProductScreen extends StatelessWidget {
   }
 
   Widget _topCategoriesListView() {
-    return SizedBox(
-      height: 50,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.length,
-        itemBuilder: (_, index) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 5),
-            child: GetBuilder<ProductController>(
-              builder: (ProductController controller) {
-                return AnimatedContainer(
-                  duration: const Duration(milliseconds: 500),
-                  width: 50,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: controller.categories[index].isSelected == false
-                        ? const Color(0xFFE5E6E8)
-                        : const Color(0xFFf16b26),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: IconButton(
-                    splashRadius: 0.1,
-                    icon: FaIcon(controller.categories[index].icon,
-                        color: controller.categories[index].isSelected == false
-                            ? const Color(0xFFA6A3A0)
-                            : Colors.white),
-                    onPressed: () => controller.filterItemsByCategory(index),
-                  ),
-                );
-              },
-            ),
-          );
-        },
-      ),
+    return ListItemSelector(
+      categories: controller.categories,
+      onItemPressed: (index) {
+        controller.filterItemsByCategory(index);
+      },
     );
   }
 
@@ -188,7 +160,7 @@ class AllProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: _appBar(),
+      appBar: _appBar,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
