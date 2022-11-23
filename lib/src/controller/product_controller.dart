@@ -1,5 +1,4 @@
 import 'package:e_commerce_flutter/core/extensions.dart';
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import '../../core/app_data.dart';
@@ -13,7 +12,7 @@ class ProductController extends GetxController {
   RxList<Product> filteredProducts = AppData.products.obs;
   RxList<Product> cartProducts = <Product>[].obs;
   RxList<ProductCategory> categories = AppData.categories.obs;
-  int length = EnumToString.toList(ProductType.values).length;
+  int length = ProductType.values.length;
   RxInt totalPrice = 0.obs;
   RxInt currentBottomNavItemIndex = 0.obs;
   RxInt productImageDefaultIndex = 0.obs;

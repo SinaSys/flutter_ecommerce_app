@@ -61,7 +61,6 @@ I welcome and encourage all pull requests. It usually will take me within 48-72 
 ## Packages
 Package Name        |
 :-------------------------|
-[enum_to_string](https://pub.dev/packages/enum_to_string)
 |[GetX](https://pub.dev/packages/get) 
 |[bottom_navy_bar](https://pub.dev/packages/bottom_navy_bar) 
 |[smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)
