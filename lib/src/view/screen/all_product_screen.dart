@@ -1,9 +1,9 @@
-import 'package:e_commerce_flutter/core/app_color.dart';
-import 'package:e_commerce_flutter/src/view/widget/list_item_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/app_color.dart';
 import '../../../core/app_data.dart';
 import '../../controller/product_controller.dart';
+import '../widget/list_item_selector.dart';
 import '../widget/product_grid_view.dart';
 
 enum AppbarActionType { leading, trailing }

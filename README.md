@@ -1,6 +1,8 @@
 ## flutter_ecommerce_app
 
 <p align="center">
+  <img src="https://img.shields.io/github/stars/SinaSys/flutter_ecommerce_app">
+  <img src="https://img.shields.io/github/forks/SinaSys/flutter_ecommerce_app">
   <img src="https://img.shields.io/github/actions/workflow/status/SinaSys/flutter_ecommerce_app/main.yml?branch=master&label=CI%20&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_ecommerce_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_ecommerce_app?label=Last%20commit">
@@ -19,6 +21,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/SinaSys/flutter_ecommerce_app/blob/master/screenshots/preview.gif?raw=true)|![](https://github.com/SinaSys/flutter_ecommerce_app/blob/master/screenshots/home_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_ecommerce_app/blob/master/screenshots/detail_screen.png?raw=true)|![](https://github.com/SinaSys/flutter_ecommerce_app/blob/master/screenshots/cart_screen.png?raw=true)
 
+<br/>
 
 ## Directory Structure
 ```
@@ -56,9 +59,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
           └──product_controller.dart
 ```
 
-## Pull Requests
-I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to any issue or request.
-
+<br/>
 
 ## Dependencies
 Package Name        |
@@ -70,11 +71,13 @@ Package Name        |
 |[font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
 |[animations](https://pub.dev/packages/animations)
 
+<br/>
 
 ## Created & Maintained By
 
 [SinaSys](https://github.com/SinaSys) 
 
+<br/>
 
 ##  Other flutter projects
  Project Name        |Stars        

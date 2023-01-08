@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:e_commerce_flutter/src/view/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
+import '../screen/profile_screen.dart';
 import 'package:get/get.dart';
 import '../../../core/app_data.dart';
 import '../../controller/product_controller.dart';
