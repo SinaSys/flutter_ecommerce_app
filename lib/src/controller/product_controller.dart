@@ -1,11 +1,11 @@
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:e_commerce_flutter/core/app_data.dart';
+import 'package:e_commerce_flutter/core/extensions.dart';
+import 'package:e_commerce_flutter/src/model/product.dart';
+import 'package:e_commerce_flutter/src/model/numerical.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import '../../core/app_data.dart';
-import '../model/numerical.dart';
-import '../model/product.dart';
-import '../model/product_category.dart';
-import '../model/product_size_type.dart';
-import '../../core/extensions.dart';
+import 'package:e_commerce_flutter/src/model/product_category.dart';
+import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 
 class ProductController extends GetxController {
   RxList<Product> allProducts = AppData.products.obs;

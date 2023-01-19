@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widget/product_grid_view.dart';
+import 'package:e_commerce_flutter/src/view/widget/product_grid_view.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);

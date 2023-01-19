@@ -1,7 +1,7 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import '../../model/product.dart';
-import '../screen/product_detail_screen.dart';
+import 'package:animations/animations.dart';
+import 'package:e_commerce_flutter/src/model/product.dart';
+import 'package:e_commerce_flutter/src/view/screen/product_detail_screen.dart';
 
 class OpenContainerWrapper extends StatelessWidget {
   const OpenContainerWrapper(

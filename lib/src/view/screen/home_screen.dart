@@ -1,13 +1,13 @@
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:flutter/material.dart';
-import '../screen/profile_screen.dart';
-import 'package:get/get.dart';
-import '../../../core/app_data.dart';
-import '../../controller/product_controller.dart';
-import 'cart_screen.dart';
-import 'favorite_screen.dart';
-import 'all_product_screen.dart';
+import 'package:e_commerce_flutter/core/app_data.dart';
+import 'package:e_commerce_flutter/src/view/screen/cart_screen.dart';
+import 'package:e_commerce_flutter/src/view/screen/profile_screen.dart';
+import 'package:e_commerce_flutter/src/view/screen/favorite_screen.dart';
+import 'package:e_commerce_flutter/src/controller/product_controller.dart';
+import 'package:e_commerce_flutter/src/view/screen/all_product_screen.dart';
 
 final ProductController controller = Get.put(ProductController());
 

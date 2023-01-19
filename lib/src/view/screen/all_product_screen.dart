@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/app_color.dart';
-import '../../../core/app_data.dart';
-import '../../controller/product_controller.dart';
-import '../widget/list_item_selector.dart';
-import '../widget/product_grid_view.dart';
+import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/core/app_data.dart';
+import 'package:e_commerce_flutter/core/app_color.dart';
+import 'package:e_commerce_flutter/src/controller/product_controller.dart';
+import 'package:e_commerce_flutter/src/view/widget/product_grid_view.dart';
+import 'package:e_commerce_flutter/src/view/widget/list_item_selector.dart';
 
 enum AppbarActionType { leading, trailing }
 

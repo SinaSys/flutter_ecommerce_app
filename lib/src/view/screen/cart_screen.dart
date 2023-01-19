@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/extensions.dart';
-import '../../controller/product_controller.dart';
-import '../../model/product.dart';
-import '../widget/animated_switcher_wrapper.dart';
-import '../widget/empty_cart.dart';
+import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/core/extensions.dart';
+import 'package:e_commerce_flutter/src/model/product.dart';
+import 'package:e_commerce_flutter/src/view/widget/empty_cart.dart';
+import 'package:e_commerce_flutter/src/controller/product_controller.dart';
+import 'package:e_commerce_flutter/src/view/widget/animated_switcher_wrapper.dart';
 
 final ProductController controller = Get.put(ProductController());
 

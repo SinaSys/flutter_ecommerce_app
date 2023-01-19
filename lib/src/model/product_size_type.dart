@@ -1,5 +1,5 @@
-import 'categorical.dart';
-import 'numerical.dart';
+import 'package:e_commerce_flutter/src/model/categorical.dart';
+import 'package:e_commerce_flutter/src/model/numerical.dart';
 
 class ProductSizeType {
   List<Numerical>? numerical;

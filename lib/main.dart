@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'src/view/screen/home_screen.dart';
-import 'core/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/core/app_theme.dart';
+import 'package:e_commerce_flutter/src/view/screen/home_screen.dart';
 
 void main() => runApp(const MyApp());
 

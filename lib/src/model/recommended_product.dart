@@ -1,6 +1,5 @@
+import 'package:e_commerce_flutter/core/app_color.dart';
 import 'package:flutter/material.dart';
-
-import '../../core/app_color.dart';
 
 class RecommendedProduct {
   Color? cardBackgroundColor;

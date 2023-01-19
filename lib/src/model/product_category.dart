@@ -1,5 +1,5 @@
+import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:flutter/material.dart';
-import '../model/product.dart';
 
 class ProductCategory {
   ProductType type;
