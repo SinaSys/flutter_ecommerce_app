@@ -76,16 +76,18 @@ class ProductDetailScreen extends StatelessWidget {
   }
 
   Widget _ratingBar(BuildContext context) {
-    return Row(
+    return Wrap(
+      spacing: 30,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         RatingBar.builder(
-            initialRating: product.rating,
-            direction: Axis.horizontal,
-            itemBuilder: (_, index) {
-              return const Icon(Icons.star, color: Colors.amber);
-            },
-            onRatingUpdate: (rating) {}),
-        const SizedBox(width: 30),
+          initialRating: product.rating,
+          direction: Axis.horizontal,
+          itemBuilder: (_, index) {
+            return const Icon(Icons.star, color: Colors.amber);
+          },
+          onRatingUpdate: (_) {},
+        ),
         Text(
           "(4500 Reviews)",
           style: Theme.of(context)
@@ -103,19 +105,18 @@ class ProductDetailScreen extends StatelessWidget {
       itemCount: controller.sizeType(product).length,
       itemBuilder: (_, index) {
         return InkWell(
-          onTap: () {
-            controller.switchBetweenProductSizes(product, index);
-          },
+          onTap: () => controller.switchBetweenProductSizes(product, index),
           child: Container(
             margin: const EdgeInsets.only(right: 5, left: 5),
             alignment: Alignment.center,
             width: controller.isNominal(product) ? 40 : 70,
             decoration: BoxDecoration(
-                color: controller.sizeType(product)[index].isSelected == false
-                    ? Colors.white
-                    : AppColor.lightOrange,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey, width: 0.4)),
+              color: controller.sizeType(product)[index].isSelected == false
+                  ? Colors.white
+                  : AppColor.lightOrange,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.grey, width: 0.4),
+            ),
             child: FittedBox(
               child: Text(
                 controller.sizeType(product)[index].numerical,
