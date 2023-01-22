@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/core/app_theme.dart';
 import 'package:e_commerce_flutter/src/view/screen/home_screen.dart';
@@ -10,7 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+        },
+      ),
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
       theme: AppTheme.lightAppTheme,
