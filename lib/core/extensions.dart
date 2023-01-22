@@ -20,6 +20,10 @@ extension IterableExtension<T> on Iterable<T> {
     });
     return result;
   }
+
+  Iterable<E> mapWithIndex<E>(E Function(int index, T value) f) {
+    return Iterable.generate(length).map((i) => f(i, elementAt(i)));
+  }
 }
 
 extension StringExtension on String {
