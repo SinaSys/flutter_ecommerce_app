@@ -17,7 +17,9 @@ class ProductGridView extends StatelessWidget {
             visible: controller.isPriceOff(product),
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.white,
+              ),
               width: 80,
               height: 30,
               alignment: Alignment.center,
@@ -75,7 +77,9 @@ class ProductGridView extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
                 style: const TextStyle(
-                    fontWeight: FontWeight.w500, color: Colors.grey),
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                ),
               ),
             ),
             const SizedBox(height: 5),
@@ -115,11 +119,14 @@ class ProductGridView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: GridView.builder(
             itemCount: controller.filteredProducts.length,
+            shrinkWrap: true,
+            physics: const ScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 10 / 16,
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10),
+              childAspectRatio: 10 / 16,
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+            ),
             itemBuilder: (_, index) {
               Product product = controller.filteredProducts[index];
               return OpenContainerWrapper(
