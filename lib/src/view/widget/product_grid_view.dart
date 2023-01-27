@@ -130,12 +130,12 @@ class ProductGridView extends StatelessWidget {
             itemBuilder: (_, index) {
               Product product = controller.filteredProducts[index];
               return OpenContainerWrapper(
+                product: product,
                 child: GridTile(
                   header: _gridItemHeader(product, index),
                   footer: _gridItemFooter(product, context),
                   child: _gridItemBody(product),
                 ),
-                product: product,
               );
             },
           ),

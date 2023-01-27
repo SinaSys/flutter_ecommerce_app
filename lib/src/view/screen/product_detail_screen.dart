@@ -24,10 +24,7 @@ class ProductDetailScreen extends StatelessWidget {
           controller.productImageDefaultIndex.value = 0;
           Navigator.pop(context);
         },
-        icon: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-        ),
+        icon: const Icon(Icons.arrow_back, color: Colors.black),
       ),
     );
   }
@@ -54,10 +51,7 @@ class ProductDetailScreen extends StatelessWidget {
               itemBuilder: (_, index) {
                 return FittedBox(
                   fit: BoxFit.none,
-                  child: Image.asset(
-                    product.images[index],
-                    scale: 3,
-                  ),
+                  child: Image.asset(product.images[index], scale: 3),
                 );
               },
             ),
@@ -83,9 +77,7 @@ class ProductDetailScreen extends StatelessWidget {
         RatingBar.builder(
           initialRating: product.rating,
           direction: Axis.horizontal,
-          itemBuilder: (_, index) {
-            return const Icon(Icons.star, color: Colors.amber);
-          },
+          itemBuilder: (_, __) => const Icon(Icons.star, color: Colors.amber),
           onRatingUpdate: (_) {},
         ),
         Text(
@@ -196,19 +188,17 @@ class ProductDetailScreen extends StatelessWidget {
                     SizedBox(
                       height: 40,
                       child: GetBuilder<ProductController>(
-                        builder: (ProductController controller) {
-                          return productSizesListView();
-                        },
+                        builder: (_) => productSizesListView(),
                       ),
                     ),
                     const SizedBox(height: 20),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        child: const Text("Add to cart"),
                         onPressed: product.isAvailable
                             ? () => controller.addToCart(product)
                             : null,
+                        child: const Text("Add to cart"),
                       ),
                     )
                   ],

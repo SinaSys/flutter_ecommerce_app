@@ -179,8 +179,8 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(20)),
-          child: const Text("Buy Now"),
           onPressed: controller.isEmptyCart ? null : () {},
+          child: const Text("Buy Now"),
         ),
       ),
     );

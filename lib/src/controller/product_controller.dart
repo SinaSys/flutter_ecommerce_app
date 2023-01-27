@@ -174,7 +174,7 @@ class ProductController extends GetxController {
     if (product.sizes?.categorical != null) {
       for (var element in product.sizes!.categorical!) {
         if (element.isSelected) {
-          currentSize = "Size:" + element.categorical.name.toString();
+          currentSize = "Size: ${element.categorical.name}";
         }
       }
     }
@@ -182,7 +182,7 @@ class ProductController extends GetxController {
     if (product.sizes?.numerical != null) {
       for (var element in product.sizes!.numerical!) {
         if (element.isSelected) {
-          currentSize = "Size:" + element.numerical;
+          currentSize = "Size: ${element.numerical}";
         }
       }
     }
