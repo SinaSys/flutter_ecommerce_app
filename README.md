@@ -50,11 +50,12 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    |   |──cart_screen.dart
      |    |   └──profile_screen.dart
      |    │───📂widget
-     |    |   |──animated_switcher_wrapper.dart
      |    |   |──product_grid_view.dart
      |    |   |──list_item_selector.dart
-     │    |   |──empty_cart.dart
-     |    |   └──open_container_wrapper.dart
+     |    |   └──empty_cart.dart
+     |    └───📂animation
+     |        |──animated_switcher_wrapper.dart
+     |        └──open_container_wrapper.dart
      └────📂controller
           └──product_controller.dart
 ```
