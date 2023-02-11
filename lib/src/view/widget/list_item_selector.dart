@@ -3,9 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:e_commerce_flutter/src/model/product_category.dart';
 
 class ListItemSelector extends StatefulWidget {
-  const ListItemSelector(
-      {Key? key, required this.categories, required this.onItemPressed})
-      : super(key: key);
+  const ListItemSelector({
+    Key? key,
+    required this.categories,
+    required this.onItemPressed,
+  }) : super(key: key);
 
   final List<ProductCategory> categories;
   final Function(int) onItemPressed;
@@ -29,10 +31,11 @@ class _ListItemSelectorState extends State<ListItemSelector> {
       ),
       child: IconButton(
         splashRadius: 0.1,
-        icon: FaIcon(item.icon,
-            color: item.isSelected == false
-                ? const Color(0xFFA6A3A0)
-                : Colors.white),
+        icon: FaIcon(
+          item.icon,
+          color:
+              item.isSelected == false ? const Color(0xFFA6A3A0) : Colors.white,
+        ),
         onPressed: () {
           widget.onItemPressed(index);
           for (var element in widget.categories) {
@@ -53,9 +56,7 @@ class _ListItemSelectorState extends State<ListItemSelector> {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.categories.length,
-        itemBuilder: (_, index) {
-          return item(widget.categories[index], index);
-        },
+        itemBuilder: (_, index) => item(widget.categories[index], index),
       ),
     );
   }

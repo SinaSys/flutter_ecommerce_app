@@ -4,7 +4,7 @@ import 'package:e_commerce_flutter/core/extensions.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/view/widget/empty_cart.dart';
 import 'package:e_commerce_flutter/src/controller/product_controller.dart';
-import 'package:e_commerce_flutter/src/view/widget/animated_switcher_wrapper.dart';
+import 'package:e_commerce_flutter/src/view/animation/animated_switcher_wrapper.dart';
 
 final ProductController controller = Get.put(ProductController());
 
@@ -115,9 +115,12 @@ class CartScreen extends StatelessWidget {
                             child: Text(
                               '${controller.cartProducts[index].quantity}',
                               key: ValueKey<int>(
-                                  controller.cartProducts[index].quantity),
+                                controller.cartProducts[index].quantity,
+                              ),
                               style: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w700),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           );
                         },
@@ -125,10 +128,7 @@ class CartScreen extends StatelessWidget {
                       IconButton(
                         splashRadius: 10.0,
                         onPressed: () => controller.increaseItem(index),
-                        icon: const Icon(
-                          Icons.add,
-                          color: Color(0xFFEC6813),
-                        ),
+                        icon: const Icon(Icons.add, color: Color(0xFFEC6813)),
                       ),
                     ],
                   ),

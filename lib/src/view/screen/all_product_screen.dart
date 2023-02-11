@@ -23,7 +23,9 @@ class AllProductScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: AppColor.lightGrey),
+        borderRadius: BorderRadius.circular(10),
+        color: AppColor.lightGrey,
+      ),
       child: IconButton(
         padding: const EdgeInsets.all(8),
         constraints: const BoxConstraints(),
@@ -100,8 +102,9 @@ class AllProductScreen extends StatelessWidget {
                             child: Text(
                               "Get Now",
                               style: TextStyle(
-                                  color: AppData.recommendedProducts[index]
-                                      .buttonTextColor!),
+                                color: AppData.recommendedProducts[index]
+                                    .buttonTextColor!,
+                              ),
                             ),
                           )
                         ],

@@ -30,11 +30,13 @@ class HomeScreen extends StatelessWidget {
             itemCornerRadius: 10,
             selectedIndex: controller.currentBottomNavItemIndex.value,
             items: AppData.bottomNavyBarItems
-                .map((item) => BottomNavyBarItem(
-                    icon: item.icon,
-                    title: Text(item.title),
-                    activeColor: item.activeColor,
-                    inactiveColor: item.inActiveColor))
+                .map(
+                  (item) => BottomNavyBarItem(
+                      icon: item.icon,
+                      title: Text(item.title),
+                      activeColor: item.activeColor,
+                      inactiveColor: item.inActiveColor),
+                )
                 .toList(),
             onItemSelected: controller.switchBetweenBottomNavigationItems,
           );

@@ -59,7 +59,9 @@ class ProductDetailScreen extends StatelessWidget {
           Obx(
             () => SmoothIndicator(
               effect: const WormEffect(
-                  dotColor: Colors.white, activeDotColor: AppColor.darkOrange),
+                dotColor: Colors.white,
+                activeDotColor: AppColor.darkOrange,
+              ),
               offset: controller.productImageDefaultIndex.value.toDouble(),
               count: product.images.length,
             ),
@@ -112,8 +114,10 @@ class ProductDetailScreen extends StatelessWidget {
             child: FittedBox(
               child: Text(
                 controller.sizeType(product)[index].numerical,
-                style:
-                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
               ),
             ),
           ),
