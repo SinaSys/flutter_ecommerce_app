@@ -15,7 +15,7 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       title: Text(
         "My cart",
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.displayLarge,
       ),
     );
   }

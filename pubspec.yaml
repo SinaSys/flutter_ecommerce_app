@@ -7,7 +7,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.6 <3.0.0"
+  sdk: ">=2.19.2 <3.0.0"
 
 
 dependencies:
@@ -15,12 +15,11 @@ dependencies:
     sdk: flutter
 
 
-  cupertino_icons: ^1.0.5
   get: ^4.6.5
   bottom_navy_bar: ^6.0.0
   smooth_page_indicator: ^1.0.0+2
   flutter_rating_bar: ^4.0.1
-  font_awesome_flutter: ^10.3.0
+  font_awesome_flutter: ^10.4.0
   animations: ^2.0.7
 
 dev_dependencies:

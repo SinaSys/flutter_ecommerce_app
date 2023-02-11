@@ -80,7 +80,7 @@ class AllProductScreen extends StatelessWidget {
                             '30% OFF DURING \nCOVID 19',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline3
+                                .displaySmall
                                 ?.copyWith(color: Colors.white),
                           ),
                           const SizedBox(height: 8),
@@ -129,7 +129,7 @@ class AllProductScreen extends StatelessWidget {
         children: [
           Text(
             "Top categories",
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           TextButton(
             onPressed: () {},
@@ -138,7 +138,7 @@ class AllProductScreen extends StatelessWidget {
               "SEE ALL",
               style: Theme.of(context)
                   .textTheme
-                  .headline6
+                  .titleLarge
                   ?.copyWith(color: Colors.deepOrange.withOpacity(0.7)),
             ),
           )
@@ -170,11 +170,11 @@ class AllProductScreen extends StatelessWidget {
               children: [
                 Text(
                   "Hello Sina",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 Text(
                   "Lets gets somethings?",
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 _recommendedProductListView(context),
                 _topCategoriesHeader(context),

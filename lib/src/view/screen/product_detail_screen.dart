@@ -84,7 +84,7 @@ class ProductDetailScreen extends StatelessWidget {
           "(4500 Reviews)",
           style: Theme.of(context)
               .textTheme
-              .headline3
+              .displaySmall
               ?.copyWith(fontWeight: FontWeight.w300),
         )
       ],
@@ -143,7 +143,7 @@ class ProductDetailScreen extends StatelessWidget {
                   children: [
                     Text(
                       product.name,
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.displayMedium,
                     ),
                     const SizedBox(height: 10),
                     _ratingBar(context),
@@ -154,7 +154,7 @@ class ProductDetailScreen extends StatelessWidget {
                           product.off != null
                               ? "\$${product.off}"
                               : "\$${product.price}",
-                          style: Theme.of(context).textTheme.headline1,
+                          style: Theme.of(context).textTheme.displayLarge,
                         ),
                         const SizedBox(width: 3),
                         Visibility(
@@ -180,7 +180,7 @@ class ProductDetailScreen extends StatelessWidget {
                     const SizedBox(height: 30),
                     Text(
                       "About",
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     const SizedBox(height: 10),
                     Text(product.about),

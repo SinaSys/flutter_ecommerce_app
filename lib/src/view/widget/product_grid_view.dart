@@ -89,7 +89,7 @@ class ProductGridView extends StatelessWidget {
                   product.off != null
                       ? "\$${product.off}"
                       : "\$${product.price}",
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(width: 3),
                 Visibility(
