@@ -4,9 +4,11 @@ import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/view/screen/product_detail_screen.dart';
 
 class OpenContainerWrapper extends StatelessWidget {
-  const OpenContainerWrapper(
-      {Key? key, required this.child, required this.product})
-      : super(key: key);
+  const OpenContainerWrapper({
+    Key? key,
+    required this.child,
+    required this.product,
+  }) : super(key: key);
 
   final Widget child;
   final Product product;
@@ -15,19 +17,15 @@ class OpenContainerWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return OpenContainer(
       closedShape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0))),
+        borderRadius: BorderRadius.all(Radius.circular(25.0)),
+      ),
       closedColor: const Color(0xFFE5E6E8),
       transitionType: ContainerTransitionType.fade,
       transitionDuration: const Duration(milliseconds: 850),
-      closedBuilder: (BuildContext context, VoidCallback openContainer) {
-        return InkWell(
-          onTap: openContainer,
-          child: child,
-        );
+      closedBuilder: (_, VoidCallback openContainer) {
+        return InkWell(onTap: openContainer, child: child);
       },
-      openBuilder: (BuildContext context, VoidCallback _) {
-        return ProductDetailScreen(product);
-      },
+      openBuilder: (_, __) => ProductDetailScreen(product),
     );
   }
 }
