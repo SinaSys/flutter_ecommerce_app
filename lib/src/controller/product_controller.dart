@@ -51,37 +51,11 @@ class ProductController extends GetxController {
     update();
   }
 
-  bool get isZeroQuantity {
-    return cartProducts.any(
-      (element) {
-        return element.price.compareTo(0) == 0 ? true : false;
-      },
-    );
-  }
+  bool isPriceOff(Product product) => product.off != null;
 
-  bool isPriceOff(Product product) {
-    if (product.off != null) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  bool get isEmptyCart => cartProducts.isEmpty;
 
-  bool get isEmptyCart {
-    if (cartProducts.isEmpty || isZeroQuantity) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  bool isNominal(Product product) {
-    if (product.sizes?.numerical != null) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  bool isNominal(Product product) => product.sizes?.numerical != null;
 
   void decreaseItem(int index) {
     Product product = cartProducts[index];
@@ -109,7 +83,7 @@ class ProductController extends GetxController {
         filteredProducts.assignAll(allProducts);
         break;
       case 1:
-        getLikedItems();
+        getLikedItems;
         break;
       case 2:
         cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
@@ -121,9 +95,9 @@ class ProductController extends GetxController {
     productImageDefaultIndex.value = index;
   }
 
-  void getLikedItems() {
-    filteredProducts.assignAll(allProducts.where((item) => item.isLiked));
-  }
+  get getLikedItems => filteredProducts.assignAll(
+        allProducts.where((item) => item.isLiked),
+      );
 
   List<Numerical> sizeType(Product product) {
     ProductSizeType? productSize = product.sizes;
@@ -137,8 +111,12 @@ class ProductController extends GetxController {
 
     if (productSize?.categorical != null) {
       for (var element in productSize!.categorical!) {
-        numericalList
-            .add(Numerical(element.categorical.name, element.isSelected));
+        numericalList.add(
+          Numerical(
+            element.categorical.name,
+            element.isSelected,
+          ),
+        );
       }
     }
 
