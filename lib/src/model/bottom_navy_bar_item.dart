@@ -7,5 +7,9 @@ class BottomNavyBarItem {
   Color inActiveColor;
 
   BottomNavyBarItem(
-      this.title, this.icon, this.activeColor, this.inActiveColor);
+    this.title,
+    this.icon,
+    this.activeColor,
+    this.inActiveColor,
+  );
 }
