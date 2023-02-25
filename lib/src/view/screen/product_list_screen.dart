@@ -10,8 +10,8 @@ enum AppbarActionType { leading, trailing }
 
 final ProductController controller = Get.put(ProductController());
 
-class AllProductScreen extends StatelessWidget {
-  const AllProductScreen({Key? key}) : super(key: key);
+class ProductListScreen extends StatelessWidget {
+  const ProductListScreen({Key? key}) : super(key: key);
 
   Widget appBarActionButton(AppbarActionType type) {
     IconData icon = Icons.ac_unit_outlined;

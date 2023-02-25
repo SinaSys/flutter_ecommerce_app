@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:e_commerce_flutter/src/view/screen/all_product_screen.dart';
+import 'package:e_commerce_flutter/src/view/screen/product_list_screen.dart';
 import 'package:e_commerce_flutter/src/view/animation/open_container_wrapper.dart';
 
 class ProductGridView extends StatelessWidget {

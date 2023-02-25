@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'dart:ui' show PointerDeviceKind;
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/core/app_theme.dart';
 import 'package:e_commerce_flutter/src/view/screen/home_screen.dart';

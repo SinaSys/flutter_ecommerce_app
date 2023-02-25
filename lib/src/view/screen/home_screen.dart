@@ -7,7 +7,7 @@ import 'package:e_commerce_flutter/src/view/screen/cart_screen.dart';
 import 'package:e_commerce_flutter/src/view/screen/profile_screen.dart';
 import 'package:e_commerce_flutter/src/view/screen/favorite_screen.dart';
 import 'package:e_commerce_flutter/src/controller/product_controller.dart';
-import 'package:e_commerce_flutter/src/view/screen/all_product_screen.dart';
+import 'package:e_commerce_flutter/src/view/screen/product_list_screen.dart';
 
 final ProductController controller = Get.put(ProductController());
 
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   static const List<Widget> screens = [
-    AllProductScreen(),
+    ProductListScreen(),
     FavoriteScreen(),
     CartScreen(),
     ProfileScreen()
@@ -32,10 +32,11 @@ class HomeScreen extends StatelessWidget {
             items: AppData.bottomNavyBarItems
                 .map(
                   (item) => BottomNavyBarItem(
-                      icon: item.icon,
-                      title: Text(item.title),
-                      activeColor: item.activeColor,
-                      inactiveColor: item.inActiveColor),
+                    icon: item.icon,
+                    title: Text(item.title),
+                    activeColor: item.activeColor,
+                    inactiveColor: item.inActiveColor,
+                  ),
                 )
                 .toList(),
             onItemSelected: controller.switchBetweenBottomNavigationItems,
