@@ -15,7 +15,6 @@ class ProductController extends GetxController {
   int length = ProductType.values.length;
   RxInt totalPrice = 0.obs;
   RxInt currentBottomNavItemIndex = 0.obs;
-  RxInt productImageDefaultIndex = 0.obs;
 
   void filterItemsByCategory(int index) {
     for (ProductCategory element in categories) {
@@ -85,10 +84,6 @@ class ProductController extends GetxController {
         cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
     }
     currentBottomNavItemIndex.value = index;
-  }
-
-  void switchBetweenProductImages(int index) {
-    productImageDefaultIndex.value = index;
   }
 
   get getFavoriteItems => filteredProducts.assignAll(

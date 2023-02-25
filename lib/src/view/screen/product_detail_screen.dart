@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/core/app_color.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:e_commerce_flutter/src/view/widget/carousel_slider.dart';
 import 'package:e_commerce_flutter/src/controller/product_controller.dart';
 
 final ProductController controller = Get.put(ProductController());
@@ -20,10 +20,7 @@ class ProductDetailScreen extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: IconButton(
-        onPressed: () {
-          controller.productImageDefaultIndex.value = 0;
-          Navigator.pop(context);
-        },
+        onPressed: () => Navigator.pop(context),
         icon: const Icon(Icons.arrow_back, color: Colors.black),
       ),
     );
@@ -40,34 +37,7 @@ class ProductDetailScreen extends StatelessWidget {
           bottomLeft: Radius.circular(200),
         ),
       ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: height * 0.32,
-            child: PageView.builder(
-              itemCount: product.images.length,
-              controller: _pageController,
-              onPageChanged: controller.switchBetweenProductImages,
-              itemBuilder: (_, index) {
-                return FittedBox(
-                  fit: BoxFit.none,
-                  child: Image.asset(product.images[index], scale: 3),
-                );
-              },
-            ),
-          ),
-          Obx(
-            () => SmoothIndicator(
-              effect: const WormEffect(
-                dotColor: Colors.white,
-                activeDotColor: AppColor.darkOrange,
-              ),
-              offset: controller.productImageDefaultIndex.value.toDouble(),
-              count: product.images.length,
-            ),
-          )
-        ],
-      ),
+      child: CarouselSlider(items: product.images, controller: _pageController),
     );
   }
 
