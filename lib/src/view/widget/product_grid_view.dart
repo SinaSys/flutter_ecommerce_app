@@ -36,7 +36,7 @@ class ProductGridView extends StatelessWidget {
                   ? Colors.redAccent
                   : const Color(0xFFA6A3A0),
             ),
-            onPressed: () => controller.isLiked(index),
+            onPressed: () => controller.isFavorite(index),
           ),
         ],
       ),

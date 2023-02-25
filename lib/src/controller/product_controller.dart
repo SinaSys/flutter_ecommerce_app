@@ -32,7 +32,7 @@ class ProductController extends GetxController {
     }
   }
 
-  void isLiked(int index) {
+  void isFavorite(int index) {
     filteredProducts[index].isLiked = !filteredProducts[index].isLiked;
     filteredProducts.refresh();
   }
@@ -44,13 +44,13 @@ class ProductController extends GetxController {
     calculateTotalPrice();
   }
 
-  void increaseItem(Product product) {
+  void increaseItemQuantity(Product product) {
     product.quantity++;
     calculateTotalPrice();
     update();
   }
 
-  void decreaseItem(Product product) {
+  void decreaseItemQuantity(Product product) {
     product.quantity--;
     calculateTotalPrice();
     update();
@@ -79,7 +79,7 @@ class ProductController extends GetxController {
         filteredProducts.assignAll(allProducts);
         break;
       case 1:
-        getLikedItems;
+        getFavoriteItems;
         break;
       case 2:
         cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
@@ -91,7 +91,7 @@ class ProductController extends GetxController {
     productImageDefaultIndex.value = index;
   }
 
-  get getLikedItems => filteredProducts.assignAll(
+  get getFavoriteItems => filteredProducts.assignAll(
         allProducts.where((item) => item.isLiked),
       );
 
