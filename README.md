@@ -50,6 +50,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    |   |──cart_screen.dart
      |    |   └──profile_screen.dart
      |    │───📂widget
+     |    |   |──carousel_slider.dart
      |    |   |──product_grid_view.dart
      |    |   |──list_item_selector.dart
      |    |   └──empty_cart.dart
