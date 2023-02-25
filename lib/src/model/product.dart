@@ -9,22 +9,29 @@ class Product {
   String about;
   bool isAvailable;
   ProductSizeType? sizes;
-  int quantity;
+  int _quantity;
   List<String> images;
   bool isLiked;
   double rating;
   ProductType type;
 
-  Product(
-      {required this.name,
-      required this.price,
-      required this.about,
-      required this.isAvailable,
-      this.sizes,
-      required this.off,
-      required this.quantity,
-      required this.images,
-      required this.isLiked,
-      required this.rating,
-      required this.type});
+  int get quantity => _quantity;
+
+  set quantity(int newQuantity) {
+    if (newQuantity >= 0) _quantity = newQuantity;
+  }
+
+  Product({
+    required this.name,
+    required this.price,
+    required this.about,
+    required this.isAvailable,
+    this.sizes,
+    required this.off,
+    required int quantity,
+    required this.images,
+    required this.isLiked,
+    required this.rating,
+    required this.type,
+  }) : _quantity = quantity;
 }

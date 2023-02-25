@@ -59,9 +59,7 @@ class ProductController extends GetxController {
 
   void decreaseItem(int index) {
     Product product = cartProducts[index];
-    if (product.quantity > 0) {
-      product.quantity--;
-    }
+    product.quantity--;
     calculateTotalPrice();
     update();
   }
