@@ -103,7 +103,7 @@ class CartScreen extends StatelessWidget {
                     children: [
                       IconButton(
                         splashRadius: 10.0,
-                        onPressed: () => controller.decreaseItem(index),
+                        onPressed: () => controller.decreaseItem(product),
                         icon: const Icon(
                           Icons.remove,
                           color: Color(0xFFEC6813),
@@ -127,7 +127,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       IconButton(
                         splashRadius: 10.0,
-                        onPressed: () => controller.increaseItem(index),
+                        onPressed: () => controller.increaseItem(product),
                         icon: const Icon(Icons.add, color: Color(0xFFEC6813)),
                       ),
                     ],

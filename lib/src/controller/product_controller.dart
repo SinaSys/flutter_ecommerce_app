@@ -44,9 +44,14 @@ class ProductController extends GetxController {
     calculateTotalPrice();
   }
 
-  void increaseItem(int index) {
-    Product product = cartProducts[index];
+  void increaseItem(Product product) {
     product.quantity++;
+    calculateTotalPrice();
+    update();
+  }
+
+  void decreaseItem(Product product) {
+    product.quantity--;
     calculateTotalPrice();
     update();
   }
@@ -56,13 +61,6 @@ class ProductController extends GetxController {
   bool get isEmptyCart => cartProducts.isEmpty;
 
   bool isNominal(Product product) => product.sizes?.numerical != null;
-
-  void decreaseItem(int index) {
-    Product product = cartProducts[index];
-    product.quantity--;
-    calculateTotalPrice();
-    update();
-  }
 
   void calculateTotalPrice() {
     totalPrice.value = 0;
