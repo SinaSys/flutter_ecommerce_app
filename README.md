@@ -44,7 +44,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
      └────📂view
      |    │───📂screen
      |    |   |──home_screen.dart
-     |    |   |──all_product_screen.dart
+     |    |   |──product_list_screen.dart
      |    |   |──product_detail_screen.dart
      |    |   |──favorite_screen.dart
      |    |   |──cart_screen.dart
