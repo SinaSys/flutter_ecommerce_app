@@ -30,7 +30,7 @@ class AppData {
         'assets/images/a53_2.png',
         'assets/images/a53_3.png'
       ],
-      isLiked: true,
+      isFavorite: true,
       rating: 1,
       type: ProductType.mobile,
     ),
@@ -46,7 +46,7 @@ class AppData {
         'assets/images/tab_s7_fe_2.png',
         'assets/images/tab_s7_fe_3.png'
       ],
-      isLiked: false,
+      isFavorite: false,
       rating: 4,
       type: ProductType.tablet,
     ),
@@ -62,7 +62,7 @@ class AppData {
         'assets/images/tab_s8_2.png',
         'assets/images/tab_s8_3.png',
       ],
-      isLiked: false,
+      isFavorite: false,
       rating: 3,
       type: ProductType.tablet,
     ),
@@ -78,7 +78,7 @@ class AppData {
         'assets/images/galaxy_watch_4_2.png',
         'assets/images/galaxy_watch_4_3.png',
       ],
-      isLiked: false,
+      isFavorite: false,
       rating: 5,
       sizes: ProductSizeType(
         categorical: [
@@ -101,7 +101,7 @@ class AppData {
         'assets/images/apple_watch_series_7_2.png',
         'assets/images/apple_watch_series_7_3.png',
       ],
-      isLiked: false,
+      isFavorite: false,
       rating: 4,
       sizes: ProductSizeType(
         numerical: [Numerical('41', true), Numerical('45', false)],
@@ -121,7 +121,7 @@ class AppData {
           'assets/images/beats_studio_3-3.png',
           'assets/images/beats_studio_3-4.png',
         ],
-        isLiked: false,
+        isFavorite: false,
         rating: 2,
         type: ProductType.headphone),
     Product(
@@ -135,7 +135,7 @@ class AppData {
         'assets/images/samsung_q_60_a_1.png',
         'assets/images/samsung_q_60_a_2.png',
       ],
-      isLiked: false,
+      isFavorite: false,
       rating: 3,
       sizes: ProductSizeType(
         numerical: [
@@ -157,7 +157,7 @@ class AppData {
         'assets/images/sony_x_80_j_1.png',
         'assets/images/sony_x_80_j_2.png',
       ],
-      isLiked: false,
+      isFavorite: false,
       sizes: ProductSizeType(
         numerical: [
           Numerical('50', true),

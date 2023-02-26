@@ -33,7 +33,7 @@ class ProductController extends GetxController {
   }
 
   void isFavorite(int index) {
-    filteredProducts[index].isLiked = !filteredProducts[index].isLiked;
+    filteredProducts[index].isFavorite = !filteredProducts[index].isFavorite;
     update();
   }
 
@@ -88,7 +88,7 @@ class ProductController extends GetxController {
   }
 
   get getFavoriteItems => filteredProducts.assignAll(
-        allProducts.where((item) => item.isLiked),
+        allProducts.where((item) => item.isFavorite),
       );
 
   List<Numerical> sizeType(Product product) {

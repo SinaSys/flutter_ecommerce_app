@@ -39,7 +39,7 @@ class ProductGridView extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.favorite,
-              color: items[index].isLiked
+              color: items[index].isFavorite
                   ? Colors.redAccent
                   : const Color(0xFFA6A3A0),
             ),

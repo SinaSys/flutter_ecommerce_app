@@ -11,7 +11,7 @@ class Product {
   ProductSizeType? sizes;
   int _quantity;
   List<String> images;
-  bool isLiked;
+  bool isFavorite;
   double rating;
   ProductType type;
 
@@ -30,7 +30,7 @@ class Product {
     required this.off,
     required int quantity,
     required this.images,
-    required this.isLiked,
+    required this.isFavorite,
     required this.rating,
     required this.type,
   }) : _quantity = quantity;
