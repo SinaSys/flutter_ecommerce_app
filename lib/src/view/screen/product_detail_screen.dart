@@ -9,11 +9,9 @@ import 'package:e_commerce_flutter/src/controller/product_controller.dart';
 final ProductController controller = Get.put(ProductController());
 
 class ProductDetailScreen extends StatelessWidget {
-  final PageController _pageController = PageController(initialPage: 0);
-
   final Product product;
 
-  ProductDetailScreen(this.product, {Key? key}) : super(key: key);
+  const ProductDetailScreen(this.product, {Key? key}) : super(key: key);
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
@@ -37,7 +35,7 @@ class ProductDetailScreen extends StatelessWidget {
           bottomLeft: Radius.circular(200),
         ),
       ),
-      child: CarouselSlider(items: product.images, controller: _pageController),
+      child: CarouselSlider(items: product.images),
     );
   }
 

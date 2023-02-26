@@ -6,11 +6,9 @@ class CarouselSlider extends StatefulWidget {
   const CarouselSlider({
     Key? key,
     required this.items,
-    required this.controller,
   }) : super(key: key);
 
   final List<String> items;
-  final PageController controller;
 
   @override
   State<CarouselSlider> createState() => _CarouselSliderState();
@@ -28,7 +26,6 @@ class _CarouselSliderState extends State<CarouselSlider> {
           height: height * 0.32,
           child: PageView.builder(
             itemCount: widget.items.length,
-            controller: widget.controller,
             onPageChanged: (int currentIndex) {
               newIndex = currentIndex;
               setState(() {});
