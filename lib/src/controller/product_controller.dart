@@ -1,6 +1,5 @@
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:e_commerce_flutter/core/app_data.dart';
-import 'package:e_commerce_flutter/core/extensions.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/model/numerical.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -40,7 +39,7 @@ class ProductController extends GetxController {
   void addToCart(Product product) {
     product.quantity++;
     cartProducts.add(product);
-    cartProducts.assignAll(cartProducts.distinctBy((item) => item));
+    cartProducts.assignAll(cartProducts);
     calculateTotalPrice();
   }
 

@@ -1,6 +1,6 @@
 import 'package:e_commerce_flutter/core/app_data.dart';
-import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:flutter/material.dart' show Color;
+import 'dart:math' show Random;
 
 extension ColorExtension on Color {
   static Color get randomColor {
@@ -11,16 +11,6 @@ extension ColorExtension on Color {
 }
 
 extension IterableExtension<T> on Iterable<T> {
-  Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
-    var result = <T>[];
-    forEach((element) {
-      if (!result.any((x) => getCompareValue(x) == getCompareValue(element))) {
-        result.add(element);
-      }
-    });
-    return result;
-  }
-
   Iterable<E> mapWithIndex<E>(E Function(int index, T value) f) {
     return Iterable.generate(length).map((i) => f(i, elementAt(i)));
   }
