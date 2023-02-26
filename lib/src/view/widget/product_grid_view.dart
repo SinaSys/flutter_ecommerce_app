@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:e_commerce_flutter/src/view/screen/product_list_screen.dart';
 import 'package:e_commerce_flutter/src/view/animation/open_container_wrapper.dart';
 
 class ProductGridView extends StatelessWidget {
-  const ProductGridView({Key? key}) : super(key: key);
+  const ProductGridView({
+    Key? key,
+    required this.items,
+    required this.isPriceOff,
+    required this.likeButtonPressed,
+  }) : super(key: key);
+
+  final List<Product> items;
+  final bool Function(Product product) isPriceOff;
+  final void Function(int index) likeButtonPressed;
 
   Widget _gridItemHeader(Product product, int index) {
     return Padding(
@@ -14,7 +21,7 @@ class ProductGridView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Visibility(
-            visible: controller.isPriceOff(product),
+            visible: isPriceOff(product),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -32,11 +39,11 @@ class ProductGridView extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.favorite,
-              color: controller.filteredProducts[index].isLiked
+              color: items[index].isLiked
                   ? Colors.redAccent
                   : const Color(0xFFA6A3A0),
             ),
-            onPressed: () => controller.isFavorite(index),
+            onPressed: () => likeButtonPressed(index),
           ),
         ],
       ),
@@ -113,34 +120,30 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () {
-        return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: GridView.builder(
-            itemCount: controller.filteredProducts.length,
-            shrinkWrap: true,
-            physics: const ScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 10 / 16,
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: GridView.builder(
+        itemCount: items.length,
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 10 / 16,
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+        ),
+        itemBuilder: (_, index) {
+          Product product = items[index];
+          return OpenContainerWrapper(
+            product: product,
+            child: GridTile(
+              header: _gridItemHeader(product, index),
+              footer: _gridItemFooter(product, context),
+              child: _gridItemBody(product),
             ),
-            itemBuilder: (_, index) {
-              Product product = controller.filteredProducts[index];
-              return OpenContainerWrapper(
-                product: product,
-                child: GridTile(
-                  header: _gridItemHeader(product, index),
-                  footer: _gridItemFooter(product, context),
-                  child: _gridItemBody(product),
-                ),
-              );
-            },
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

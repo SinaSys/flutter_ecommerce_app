@@ -29,11 +29,12 @@ class ProductController extends GetxController {
         return item.type == categories[index].type;
       }).toList());
     }
+    update();
   }
 
   void isFavorite(int index) {
     filteredProducts[index].isLiked = !filteredProducts[index].isLiked;
-    filteredProducts.refresh();
+    update();
   }
 
   void addToCart(Product product) {

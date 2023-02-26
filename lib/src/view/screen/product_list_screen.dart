@@ -182,7 +182,13 @@ class ProductListScreen extends StatelessWidget {
                 _recommendedProductListView(context),
                 _topCategoriesHeader(context),
                 _topCategoriesListView(),
-                const ProductGridView()
+                GetBuilder(builder: (ProductController controller) {
+                  return ProductGridView(
+                    items: controller.filteredProducts,
+                    likeButtonPressed: (index) => controller.isFavorite(index),
+                    isPriceOff: (product) => controller.isPriceOff(product),
+                  );
+                }),
               ],
             ),
           ),

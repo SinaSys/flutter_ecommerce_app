@@ -1,4 +1,6 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/src/controller/product_controller.dart';
 import 'package:e_commerce_flutter/src/view/widget/product_grid_view.dart';
 
 class FavoriteScreen extends StatelessWidget {
@@ -13,9 +15,17 @@ class FavoriteScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20),
-        child: ProductGridView(),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: GetBuilder(
+          builder: (ProductController controller) {
+            return ProductGridView(
+              items: controller.filteredProducts,
+              likeButtonPressed: (index) => controller.isFavorite(index),
+              isPriceOff: (product) => controller.isPriceOff(product),
+            );
+          },
+        ),
       ),
     );
   }
