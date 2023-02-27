@@ -161,6 +161,7 @@ class ProductListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.getAllItems();
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: _appBar,

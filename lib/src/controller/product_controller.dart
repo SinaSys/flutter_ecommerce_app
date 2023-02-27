@@ -7,13 +7,11 @@ import 'package:e_commerce_flutter/src/model/product_category.dart';
 import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 
 class ProductController extends GetxController {
-  RxList<Product> allProducts = AppData.products.obs;
+  List<Product> allProducts = AppData.products;
   RxList<Product> filteredProducts = AppData.products.obs;
   RxList<Product> cartProducts = <Product>[].obs;
   RxList<ProductCategory> categories = AppData.categories.obs;
-  int length = ProductType.values.length;
   RxInt totalPrice = 0.obs;
-  RxInt currentBottomNavItemIndex = 0.obs;
 
   void filterItemsByCategory(int index) {
     for (ProductCategory element in categories) {
@@ -72,23 +70,21 @@ class ProductController extends GetxController {
     }
   }
 
-  void switchBetweenBottomNavigationItems(int index) {
-    switch (index) {
-      case 0:
-        filteredProducts.assignAll(allProducts);
-        break;
-      case 1:
-        getFavoriteItems;
-        break;
-      case 2:
-        cartProducts.assignAll(allProducts.where((item) => item.quantity > 0));
-    }
-    currentBottomNavItemIndex.value = index;
+  getFavoriteItems() {
+    filteredProducts.assignAll(
+      allProducts.where((item) => item.isFavorite),
+    );
   }
 
-  get getFavoriteItems => filteredProducts.assignAll(
-        allProducts.where((item) => item.isFavorite),
-      );
+  getCartItems() {
+    cartProducts.assignAll(
+      allProducts.where((item) => item.quantity > 0),
+    );
+  }
+
+  getAllItems() {
+    filteredProducts.assignAll(allProducts);
+  }
 
   List<Numerical> sizeType(Product product) {
     ProductSizeType? productSize = product.sizes;
