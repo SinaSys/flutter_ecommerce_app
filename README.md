@@ -54,6 +54,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    |   |──product_grid_view.dart
      |    |   |──list_item_selector.dart
      |    |   └──empty_cart.dart
+     |    |   └──page_wrapper.dart
      |    └───📂animation
      |        |──animated_switcher_wrapper.dart
      |        └──open_container_wrapper.dart
@@ -79,6 +80,10 @@ Package Name        |
 
 [SinaSys](https://github.com/SinaSys) 
 
+
+## Contributors
+• [mufarrah](https://github.com/mufarrah)
+<br/>
 <br/>
 
 ##  Other flutter projects
