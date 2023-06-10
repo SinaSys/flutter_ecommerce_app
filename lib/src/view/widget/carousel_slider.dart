@@ -38,13 +38,13 @@ class _CarouselSliderState extends State<CarouselSlider> {
             },
           ),
         ),
-        SmoothIndicator(
+        AnimatedSmoothIndicator(
           effect: const WormEffect(
             dotColor: Colors.white,
             activeDotColor: AppColor.darkOrange,
           ),
-          offset: newIndex.toDouble(),
           count: widget.items.length,
+          activeIndex: newIndex,
         )
       ],
     );
