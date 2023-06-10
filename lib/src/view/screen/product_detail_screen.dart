@@ -1,9 +1,9 @@
-import 'package:e_commerce_flutter/src/view/widget/page_wrapper.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/core/app_color.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:e_commerce_flutter/src/view/widget/page_wrapper.dart';
 import 'package:e_commerce_flutter/src/view/widget/carousel_slider.dart';
 import 'package:e_commerce_flutter/src/controller/product_controller.dart';
 
@@ -69,7 +69,7 @@ class ProductDetailScreen extends StatelessWidget {
       itemBuilder: (_, index) {
         return InkWell(
           onTap: () => controller.switchBetweenProductSizes(product, index),
-          child: Container(
+          child: AnimatedContainer(
             margin: const EdgeInsets.only(right: 5, left: 5),
             alignment: Alignment.center,
             width: controller.isNominal(product) ? 40 : 70,
@@ -80,6 +80,7 @@ class ProductDetailScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: Colors.grey, width: 0.4),
             ),
+            duration: const Duration(milliseconds: 300),
             child: FittedBox(
               child: Text(
                 controller.sizeType(product)[index].numerical,
