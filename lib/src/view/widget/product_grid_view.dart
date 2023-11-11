@@ -4,11 +4,11 @@ import 'package:e_commerce_flutter/src/view/animation/open_container_wrapper.dar
 
 class ProductGridView extends StatelessWidget {
   const ProductGridView({
-    Key? key,
+    super.key,
     required this.items,
     required this.isPriceOff,
     required this.likeButtonPressed,
-  }) : super(key: key);
+  });
 
   final List<Product> items;
   final bool Function(Product product) isPriceOff;

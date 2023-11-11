@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class AnimatedSwitcherWrapper extends StatelessWidget {
   final Widget child;
 
-  const AnimatedSwitcherWrapper({Key? key, required this.child})
-      : super(key: key);
+  const AnimatedSwitcherWrapper({
+    super.key,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {

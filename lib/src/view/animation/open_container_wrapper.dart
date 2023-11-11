@@ -5,10 +5,10 @@ import 'package:e_commerce_flutter/src/view/screen/product_detail_screen.dart';
 
 class OpenContainerWrapper extends StatelessWidget {
   const OpenContainerWrapper({
-    Key? key,
+    super.key,
     required this.child,
     required this.product,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Product product;

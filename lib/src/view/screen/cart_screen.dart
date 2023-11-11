@@ -9,7 +9,7 @@ import 'package:e_commerce_flutter/src/view/animation/animated_switcher_wrapper.
 final ProductController controller = Get.put(ProductController());
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(

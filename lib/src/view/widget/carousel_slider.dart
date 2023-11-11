@@ -4,9 +4,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class CarouselSlider extends StatefulWidget {
   const CarouselSlider({
-    Key? key,
+    super.key,
     required this.items,
-  }) : super(key: key);
+  });
 
   final List<String> items;
 

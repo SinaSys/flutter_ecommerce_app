@@ -12,7 +12,7 @@ final ProductController controller = Get.put(ProductController());
 class ProductDetailScreen extends StatelessWidget {
   final Product product;
 
-  const ProductDetailScreen(this.product, {Key? key}) : super(key: key);
+  const ProductDetailScreen(this.product, {super.key});
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
