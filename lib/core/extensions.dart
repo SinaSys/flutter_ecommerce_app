@@ -1,6 +1,6 @@
-import 'package:e_commerce_flutter/core/app_data.dart';
-import 'package:flutter/material.dart' show Color;
 import 'dart:math' show Random;
+import 'package:flutter/material.dart' show Color;
+import 'package:e_commerce_flutter/core/app_data.dart';
 
 extension ColorExtension on Color {
   static Color get randomColor {
