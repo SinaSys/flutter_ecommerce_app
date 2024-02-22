@@ -11,7 +11,7 @@ import 'package:e_commerce_flutter/src/model/bottom_navy_bar_item.dart';
 class AppData {
   const AppData._();
 
-  static String dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesetting'
+  static const String dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesetting'
       ' industry. Lorem Ipsum has been the industry\'s standard dummy text'
       ' ever since the 1500s, when an unknown printer took a galley of type'
       ' and scrambled it to make a type specimen book.';
@@ -20,7 +20,6 @@ class AppData {
     Product(
       name: 'Samsung Galaxy A53 5G',
       price: 460,
-      about: dummyText,
       isAvailable: true,
       off: 300,
       quantity: 0,
@@ -36,7 +35,6 @@ class AppData {
     Product(
       name: 'Samsung Galaxy Tab S7 FE',
       price: 380,
-      about: dummyText,
       isAvailable: false,
       off: 220,
       quantity: 0,
@@ -52,7 +50,6 @@ class AppData {
     Product(
       name: 'Samsung Galaxy Tab S8+',
       price: 650,
-      about: dummyText,
       isAvailable: true,
       off: null,
       quantity: 0,
@@ -68,7 +65,6 @@ class AppData {
     Product(
       name: 'Samsung Galaxy Watch 4',
       price: 229,
-      about: dummyText,
       isAvailable: true,
       off: 200,
       quantity: 0,
@@ -91,7 +87,6 @@ class AppData {
     Product(
       name: 'Apple Watch 7',
       price: 330,
-      about: dummyText,
       isAvailable: true,
       off: null,
       quantity: 0,
@@ -113,7 +108,6 @@ class AppData {
     Product(
       name: 'Beats studio 3',
       price: 230,
-      about: dummyText,
       isAvailable: true,
       off: null,
       quantity: 0,
@@ -130,7 +124,6 @@ class AppData {
     Product(
       name: 'Samsung Q60 A',
       price: 497,
-      about: dummyText,
       isAvailable: true,
       off: null,
       quantity: 0,
@@ -152,7 +145,6 @@ class AppData {
     Product(
       name: 'Sony x 80 J',
       price: 498,
-      about: dummyText,
       isAvailable: true,
       off: null,
       quantity: 0,
@@ -216,25 +208,21 @@ class AppData {
       "Home",
       Icon(Icons.home),
       Color(0xFFEC6813),
-      Colors.grey,
     ),
     const BottomNavyBarItem(
       "Favorite",
       Icon(Icons.favorite),
       Color(0xFFEC6813),
-      Colors.grey,
     ),
     const BottomNavyBarItem(
       "Cart",
       Icon(Icons.shopping_cart),
       Color(0xFFEC6813),
-      Colors.grey,
     ),
     const BottomNavyBarItem(
       "Profile",
       Icon(Icons.person),
       Color(0xFFEC6813),
-      Colors.grey,
     ),
   ];
 
