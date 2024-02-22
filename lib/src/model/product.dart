@@ -1,3 +1,4 @@
+import 'package:e_commerce_flutter/core/app_data.dart';
 import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 
 enum ProductType { all, watch, mobile, headphone, tablet, tv }
@@ -22,11 +23,11 @@ class Product {
   }
 
   Product({
+    this.sizes,
+    this.about = AppData.dummyText,
     required this.name,
     required this.price,
-    required this.about,
     required this.isAvailable,
-    this.sizes,
     required this.off,
     required int quantity,
     required this.images,
