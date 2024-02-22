@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart' show immutable;
-import 'package:flutter/material.dart' show Icon, Color;
+import 'package:flutter/material.dart' show Color, Colors, Icon;
 
 @immutable
 class BottomNavyBarItem {
@@ -12,6 +12,6 @@ class BottomNavyBarItem {
     this.title,
     this.icon,
     this.activeColor,
-    this.inActiveColor,
+    [this.inActiveColor = Colors.grey]
   );
 }
