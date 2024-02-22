@@ -66,7 +66,7 @@ class ProductGridView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         padding: const EdgeInsets.all(10),
-        height: 60,
+        height: 70,
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
