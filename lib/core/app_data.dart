@@ -1,18 +1,17 @@
-import 'package:e_commerce_flutter/src/model/bottom_navy_bar_item.dart';
-import 'package:e_commerce_flutter/src/model/recommended_product.dart';
-import 'package:e_commerce_flutter/src/model/product_size_type.dart';
-import 'package:e_commerce_flutter/src/model/product_category.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:e_commerce_flutter/src/model/categorical.dart';
-import 'package:e_commerce_flutter/src/model/numerical.dart';
-import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/src/model/product.dart';
+import 'package:e_commerce_flutter/src/model/numerical.dart';
+import 'package:e_commerce_flutter/src/model/categorical.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:e_commerce_flutter/src/model/product_category.dart';
+import 'package:e_commerce_flutter/src/model/product_size_type.dart';
+import 'package:e_commerce_flutter/src/model/recommended_product.dart';
+import 'package:e_commerce_flutter/src/model/bottom_navy_bar_item.dart';
 
 class AppData {
   const AppData._();
 
-  static String dummyText =
-      'Lorem Ipsum is simply dummy text of the printing and typesetting'
+  static String dummyText = 'Lorem Ipsum is simply dummy text of the printing and typesetting'
       ' industry. Lorem Ipsum has been the industry\'s standard dummy text'
       ' ever since the 1500s, when an unknown printer took a galley of type'
       ' and scrambled it to make a type specimen book.';
@@ -28,7 +27,7 @@ class AppData {
       images: [
         'assets/images/a53_1.png',
         'assets/images/a53_2.png',
-        'assets/images/a53_3.png'
+        'assets/images/a53_3.png',
       ],
       isFavorite: true,
       rating: 1,
@@ -44,7 +43,7 @@ class AppData {
       images: [
         'assets/images/tab_s7_fe_1.png',
         'assets/images/tab_s7_fe_2.png',
-        'assets/images/tab_s7_fe_3.png'
+        'assets/images/tab_s7_fe_3.png',
       ],
       isFavorite: false,
       rating: 4,
@@ -104,26 +103,30 @@ class AppData {
       isFavorite: false,
       rating: 4,
       sizes: ProductSizeType(
-        numerical: [Numerical('41', true), Numerical('45', false)],
+        numerical: [
+          Numerical('41', true),
+          Numerical('45', false),
+        ],
       ),
       type: ProductType.watch,
     ),
     Product(
-        name: 'Beats studio 3',
-        price: 230,
-        about: dummyText,
-        isAvailable: true,
-        off: null,
-        quantity: 0,
-        images: [
-          'assets/images/beats_studio_3-1.png',
-          'assets/images/beats_studio_3-2.png',
-          'assets/images/beats_studio_3-3.png',
-          'assets/images/beats_studio_3-4.png',
-        ],
-        isFavorite: false,
-        rating: 2,
-        type: ProductType.headphone),
+      name: 'Beats studio 3',
+      price: 230,
+      about: dummyText,
+      isAvailable: true,
+      off: null,
+      quantity: 0,
+      images: [
+        'assets/images/beats_studio_3-1.png',
+        'assets/images/beats_studio_3-2.png',
+        'assets/images/beats_studio_3-3.png',
+        'assets/images/beats_studio_3-4.png',
+      ],
+      isFavorite: false,
+      rating: 2,
+      type: ProductType.headphone,
+    ),
     Product(
       name: 'Samsung Q60 A',
       price: 497,
@@ -141,7 +144,7 @@ class AppData {
         numerical: [
           Numerical('43', true),
           Numerical('50', false),
-          Numerical('55', false)
+          Numerical('55', false),
         ],
       ),
       type: ProductType.tv,
@@ -162,7 +165,7 @@ class AppData {
         numerical: [
           Numerical('50', true),
           Numerical('65', false),
-          Numerical('85', false)
+          Numerical('85', false),
         ],
       ),
       rating: 2,
@@ -172,30 +175,28 @@ class AppData {
 
   static List<ProductCategory> categories = [
     ProductCategory(
-      ProductType.all,
-      true,
-      Icons.all_inclusive,
+      type: ProductType.all,
+      icon: Icons.all_inclusive,
     ),
     ProductCategory(
-      ProductType.mobile,
-      false,
-      FontAwesomeIcons.mobileScreenButton,
-    ),
-    ProductCategory(ProductType.watch, false, Icons.watch),
-    ProductCategory(
-      ProductType.tablet,
-      false,
-      FontAwesomeIcons.tablet,
+      type: ProductType.mobile,
+      icon: FontAwesomeIcons.mobileScreenButton,
     ),
     ProductCategory(
-      ProductType.headphone,
-      false,
-      Icons.headphones,
+      type: ProductType.watch,
+      icon: Icons.watch,
     ),
     ProductCategory(
-      ProductType.tv,
-      false,
-      Icons.tv,
+      type: ProductType.tablet,
+      icon: FontAwesomeIcons.tablet,
+    ),
+    ProductCategory(
+      type: ProductType.headphone,
+      icon: Icons.headphones,
+    ),
+    ProductCategory(
+      type: ProductType.tv,
+      icon: Icons.tv,
     ),
   ];
 
@@ -211,28 +212,28 @@ class AppData {
   ];
 
   static List<BottomNavyBarItem> bottomNavyBarItems = [
-    BottomNavyBarItem(
+    const BottomNavyBarItem(
       "Home",
-      const Icon(Icons.home),
-      const Color(0xFFEC6813),
+      Icon(Icons.home),
+      Color(0xFFEC6813),
       Colors.grey,
     ),
-    BottomNavyBarItem(
+    const BottomNavyBarItem(
       "Favorite",
-      const Icon(Icons.favorite),
-      const Color(0xFFEC6813),
+      Icon(Icons.favorite),
+      Color(0xFFEC6813),
       Colors.grey,
     ),
-    BottomNavyBarItem(
+    const BottomNavyBarItem(
       "Cart",
-      const Icon(Icons.shopping_cart),
-      const Color(0xFFEC6813),
+      Icon(Icons.shopping_cart),
+      Color(0xFFEC6813),
       Colors.grey,
     ),
-    BottomNavyBarItem(
+    const BottomNavyBarItem(
       "Profile",
-      const Icon(Icons.person),
-      const Color(0xFFEC6813),
+      Icon(Icons.person),
+      Color(0xFFEC6813),
       Colors.grey,
     ),
   ];

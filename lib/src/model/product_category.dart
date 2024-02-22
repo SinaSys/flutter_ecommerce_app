@@ -6,5 +6,9 @@ class ProductCategory {
   bool isSelected;
   IconData icon;
 
-  ProductCategory(this.type, this.isSelected, this.icon);
+  ProductCategory({
+    required this.type,
+    this.isSelected = false,
+    required this.icon,
+  });
 }
