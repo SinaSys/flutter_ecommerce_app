@@ -18,8 +18,8 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
-  font_awesome_flutter: ^10.6.0
-  animations: ^2.0.8
+  font_awesome_flutter: ^10.7.0
+  animations: ^2.0.11
 
 dev_dependencies:
   flutter_lints: ^3.0.1
