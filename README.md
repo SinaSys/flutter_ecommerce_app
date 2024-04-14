@@ -73,6 +73,7 @@ Package Name        |
 |[flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)
 |[font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
 |[animations](https://pub.dev/packages/animations)
+|[flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)
 
 <br/>
 
