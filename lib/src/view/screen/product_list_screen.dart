@@ -80,21 +80,17 @@ class ProductListScreen extends StatelessWidget {
                         children: [
                           Text(
                             '30% OFF DURING \nCOVID 19',
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall
-                                ?.copyWith(color: Colors.white),
+                            style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                                  color: Colors.white,
+                                ),
                           ),
                           const SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: AppData
-                                  .recommendedProducts[index]
-                                  .buttonBackgroundColor,
+                              backgroundColor: AppData.recommendedProducts[index].buttonBackgroundColor,
                               elevation: 0,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 18),
+                              padding: const EdgeInsets.symmetric(horizontal: 18),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18),
                               ),
@@ -102,8 +98,7 @@ class ProductListScreen extends StatelessWidget {
                             child: Text(
                               "Get Now",
                               style: TextStyle(
-                                color: AppData.recommendedProducts[index]
-                                    .buttonTextColor!,
+                                color: AppData.recommendedProducts[index].buttonTextColor!,
                               ),
                             ),
                           )
@@ -112,7 +107,7 @@ class ProductListScreen extends StatelessWidget {
                     ),
                     const Spacer(),
                     Image.asset(
-                      'assets/images/shopping.png',
+                      AppData.recommendedProducts[index].imagePath,
                       height: 125,
                       fit: BoxFit.cover,
                     )
@@ -139,10 +134,9 @@ class ProductListScreen extends StatelessWidget {
             style: TextButton.styleFrom(foregroundColor: AppColor.darkOrange),
             child: Text(
               "SEE ALL",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(color: Colors.deepOrange.withOpacity(0.7)),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: Colors.deepOrange.withOpacity(0.7),
+                  ),
             ),
           )
         ],
