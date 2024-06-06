@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:animations/animations.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:e_commerce_flutter/core/app_data.dart';
+import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 import 'package:e_commerce_flutter/src/view/screen/cart_screen.dart';
-import 'package:e_commerce_flutter/src/view/widget/page_wrapper.dart';
 import 'package:e_commerce_flutter/src/view/screen/profile_screen.dart';
 import 'package:e_commerce_flutter/src/view/screen/favorite_screen.dart';
 import 'package:e_commerce_flutter/src/view/screen/product_list_screen.dart';
+import 'package:e_commerce_flutter/src/view/animation/page_transition_switcher_wrapper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +14,7 @@ class HomeScreen extends StatefulWidget {
     ProductListScreen(),
     FavoriteScreen(),
     CartScreen(),
-    ProfileScreen()
+    ProfileScreen(),
   ];
 
   @override
@@ -27,40 +26,41 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PageWrapper(
-      child: Scaffold(
-        bottomNavigationBar: BottomNavyBar(
-          itemCornerRadius: 10,
-          selectedIndex: newIndex,
-          items: AppData.bottomNavyBarItems
-              .map(
-                (item) => BottomNavyBarItem(
-                  icon: item.icon,
-                  title: Text(item.title),
-                  activeColor: item.activeColor,
-                  inactiveColor: item.inActiveColor,
-                ),
-              )
-              .toList(),
-          onItemSelected: (currentIndex) {
-            newIndex = currentIndex;
-            setState(() {});
-          },
-        ),
-        body: PageTransitionSwitcher(
-          duration: const Duration(seconds: 1),
-          transitionBuilder: (
-            Widget child,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) {
-            return FadeThroughTransition(
-              animation: animation,
-              secondaryAnimation: secondaryAnimation,
-              child: child,
-            );
-          },
-          child: HomeScreen.screens[newIndex],
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 800),
+        child: Scaffold(
+          bottomNavigationBar: StylishBottomBar(
+            currentIndex: newIndex,
+            onTap: (index) {
+              newIndex = index;
+              setState(() {});
+            },
+            items: AppData.bottomNavBarItems
+                .map(
+                  (item) => BottomBarItem(
+                    backgroundColor: item.activeColor,
+                    icon: item.icon,
+                    title: Text(
+                      item.title,
+                      style: TextStyle(
+                        color: item.activeColor,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+            option: BubbleBarOptions(
+              opacity: 0.3,
+              unselectedIconColor: Colors.grey,
+              borderRadius: BorderRadius.circular(
+                15.0,
+              ),
+            ),
+          ),
+          body: PageTransitionSwitcherWrapper(
+            child: HomeScreen.screens[newIndex],
+          ),
         ),
       ),
     );
