@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:e_commerce_flutter/src/model/product_category.dart';
 import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 import 'package:e_commerce_flutter/src/model/recommended_product.dart';
-import 'package:e_commerce_flutter/src/model/bottom_navy_bar_item.dart';
+import 'package:e_commerce_flutter/src/model/bottom_nav_bar_item.dart';
 
 class AppData {
   const AppData._();
@@ -203,36 +203,32 @@ class AppData {
     const Color(0xFFECEFF1),
   ];
 
-  static List<BottomNavyBarItem> bottomNavyBarItems = [
-    const BottomNavyBarItem(
+  static const Color lightOrangeColor = Color(0xFFEC6813);
+
+  static List<BottomNavBarItem> bottomNavBarItems = [
+    const BottomNavBarItem(
       "Home",
       Icon(Icons.home),
-      Color(0xFFEC6813),
     ),
-    const BottomNavyBarItem(
+    const BottomNavBarItem(
       "Favorite",
       Icon(Icons.favorite),
-      Color(0xFFEC6813),
     ),
-    const BottomNavyBarItem(
+    const BottomNavBarItem(
       "Cart",
       Icon(Icons.shopping_cart),
-      Color(0xFFEC6813),
     ),
-    const BottomNavyBarItem(
+    const BottomNavBarItem(
       "Profile",
       Icon(Icons.person),
-      Color(0xFFEC6813),
     ),
   ];
 
   static List<RecommendedProduct> recommendedProducts = [
     RecommendedProduct(
-      imagePath: "",
       cardBackgroundColor: const Color(0xFFEC6813),
     ),
     RecommendedProduct(
-      imagePath: "",
       cardBackgroundColor: const Color(0xFF3081E1),
       buttonBackgroundColor: const Color(0xFF9C46FF),
       buttonTextColor: Colors.white,
