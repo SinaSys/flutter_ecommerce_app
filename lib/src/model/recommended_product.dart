@@ -5,12 +5,12 @@ class RecommendedProduct {
   Color? cardBackgroundColor;
   Color? buttonTextColor;
   Color? buttonBackgroundColor;
-  String? imagePath;
+  String imagePath;
 
   RecommendedProduct({
     this.cardBackgroundColor,
     this.buttonTextColor = AppColor.darkOrange,
     this.buttonBackgroundColor = Colors.white,
-    this.imagePath,
+    this.imagePath = "assets/images/shopping.png",
   });
 }
