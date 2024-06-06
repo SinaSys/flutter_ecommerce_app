@@ -40,7 +40,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    │──recommended_product.dart
      |    │──categorical.dart
      |    │──numerical.dart
-     |    └──bottom_navy_bar_item.dart
+     |    └──bottom_nav_bar_item.dart
      └────📂view
      |    │───📂screen
      |    |   |──home_screen.dart
@@ -54,10 +54,10 @@ Preview                    |   Home screen             |  Product Detail Screen 
      |    |   |──product_grid_view.dart
      |    |   |──list_item_selector.dart
      |    |   └──empty_cart.dart
-     |    |   └──page_wrapper.dart
      |    └───📂animation
      |        |──animated_switcher_wrapper.dart
-     |        └──open_container_wrapper.dart
+     |        |──open_container_wrapper.dart
+     |        └──page_transition_switcher_wrapper.dart
      └────📂controller
           └──product_controller.dart
 ```
@@ -68,7 +68,7 @@ Preview                    |   Home screen             |  Product Detail Screen 
 Package Name        |
 :-------------------------|
 |[GetX](https://pub.dev/packages/get) 
-|[bottom_navy_bar](https://pub.dev/packages/bottom_navy_bar) 
+|[stylish_bottom_bar](https://pub.dev/packages/stylish_bottom_bar) 
 |[smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)
 |[flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)
 |[font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
