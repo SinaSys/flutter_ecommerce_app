@@ -28,67 +28,71 @@ class CartScreen extends StatelessWidget {
           return Container(
             width: double.infinity,
             margin: const EdgeInsets.all(15),
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.symmetric(
+              vertical: 15,
+              horizontal: 5,
+            ),
             decoration: BoxDecoration(
               color: Colors.grey[200]?.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              alignment: WrapAlignment.spaceEvenly,
+            child: Row(
+              spacing: 5,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: ColorExtension.randomColor,
-                  ),
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                    child: ClipRRect(
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Image.asset(
-                          product.images[0],
-                          width: 100,
-                          height: 90,
+                      color: ColorExtension.randomColor,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: Image.asset(
+                            product.images[0],
+                            width: 100,
+                            height: 90,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.name.nextLine,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.name.nextLine,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      controller.getCurrentSize(product),
-                      style: TextStyle(
-                        color: Colors.black.withValues(alpha: 0.5),
-                        fontWeight: FontWeight.w400,
+                      const SizedBox(height: 5),
+                      Text(
+                        controller.getCurrentSize(product),
+                        style: TextStyle(
+                          color: Colors.black.withValues(alpha: 0.5),
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      controller.isPriceOff(product) ? "\$${product.off}" : "\$${product.price}",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 23,
+                      const SizedBox(height: 5),
+                      Text(
+                        controller.isPriceOff(product) ? "\$${product.off}" : "\$${product.price}",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 23,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -96,7 +100,7 @@ class CartScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
