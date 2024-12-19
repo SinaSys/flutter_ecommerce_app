@@ -30,7 +30,7 @@ class CartScreen extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
-              color: Colors.grey[200]?.withOpacity(0.6),
+              color: Colors.grey[200]?.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Wrap(
@@ -76,15 +76,13 @@ class CartScreen extends StatelessWidget {
                     Text(
                       controller.getCurrentSize(product),
                       style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
+                        color: Colors.black.withValues(alpha: 0.5),
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      controller.isPriceOff(product)
-                          ? "\$${product.off}"
-                          : "\$${product.price}",
+                      controller.isPriceOff(product) ? "\$${product.off}" : "\$${product.price}",
                       style: const TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 23,
@@ -103,8 +101,7 @@ class CartScreen extends StatelessWidget {
                     children: [
                       IconButton(
                         splashRadius: 10.0,
-                        onPressed: () =>
-                            controller.decreaseItemQuantity(product),
+                        onPressed: () => controller.decreaseItemQuantity(product),
                         icon: const Icon(
                           Icons.remove,
                           color: Color(0xFFEC6813),
@@ -128,8 +125,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       IconButton(
                         splashRadius: 10.0,
-                        onPressed: () =>
-                            controller.increaseItemQuantity(product),
+                        onPressed: () => controller.increaseItemQuantity(product),
                         icon: const Icon(Icons.add, color: Color(0xFFEC6813)),
                       ),
                     ],

@@ -57,65 +57,66 @@ class ProductListScreen extends StatelessWidget {
     return SizedBox(
       height: 170,
       child: ListView.builder(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          itemCount: AppData.recommendedProducts.length,
-          itemBuilder: (_, index) {
-            return Padding(
-              padding: const EdgeInsets.only(right: 20),
-              child: Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  color: AppData.recommendedProducts[index].cardBackgroundColor,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '30% OFF DURING \nCOVID 19',
-                            style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                                  color: Colors.white,
-                                ),
-                          ),
-                          const SizedBox(height: 8),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppData.recommendedProducts[index].buttonBackgroundColor,
-                              elevation: 0,
-                              padding: const EdgeInsets.symmetric(horizontal: 18),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18),
-                              ),
-                            ),
-                            child: Text(
-                              "Get Now",
-                              style: TextStyle(
-                                color: AppData.recommendedProducts[index].buttonTextColor!,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    const Spacer(),
-                    Image.asset(
-                      AppData.recommendedProducts[index].imagePath,
-                      height: 125,
-                      fit: BoxFit.cover,
-                    )
-                  ],
-                ),
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemCount: AppData.recommendedProducts.length,
+        itemBuilder: (_, index) {
+          return Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Container(
+              width: 300,
+              decoration: BoxDecoration(
+                color: AppData.recommendedProducts[index].cardBackgroundColor,
+                borderRadius: BorderRadius.circular(15),
               ),
-            );
-          }),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '30% OFF DURING \nCOVID 19',
+                          style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                                color: Colors.white,
+                              ),
+                        ),
+                        const SizedBox(height: 8),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppData.recommendedProducts[index].buttonBackgroundColor,
+                            elevation: 0,
+                            padding: const EdgeInsets.symmetric(horizontal: 18),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                          ),
+                          child: Text(
+                            "Get Now",
+                            style: TextStyle(
+                              color: AppData.recommendedProducts[index].buttonTextColor!,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  Image.asset(
+                    AppData.recommendedProducts[index].imagePath,
+                    height: 125,
+                    fit: BoxFit.cover,
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 
@@ -135,7 +136,7 @@ class ProductListScreen extends StatelessWidget {
             child: Text(
               "SEE ALL",
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: Colors.deepOrange.withOpacity(0.7),
+                    color: Colors.deepOrange.withValues(alpha: 0.7),
                   ),
             ),
           )
@@ -177,13 +178,15 @@ class ProductListScreen extends StatelessWidget {
                 _recommendedProductListView(context),
                 _topCategoriesHeader(context),
                 _topCategoriesListView(),
-                GetBuilder(builder: (ProductController controller) {
-                  return ProductGridView(
-                    items: controller.filteredProducts,
-                    likeButtonPressed: (index) => controller.isFavorite(index),
-                    isPriceOff: (product) => controller.isPriceOff(product),
-                  );
-                }),
+                GetBuilder(
+                  builder: (ProductController controller) {
+                    return ProductGridView(
+                      items: controller.filteredProducts,
+                      likeButtonPressed: (index) => controller.isFavorite(index),
+                      isPriceOff: (product) => controller.isPriceOff(product),
+                    );
+                  },
+                ),
               ],
             ),
           ),
